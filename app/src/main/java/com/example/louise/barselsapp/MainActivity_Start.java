@@ -10,19 +10,20 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
 public class MainActivity_Start extends ListActivity {
     ListView listView1;
+    TextView view;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.main_activity_start_layout);
 
         String[] muligheder = {"FAQ","Video Guides","Informationer","Chat"};
-        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, android.R.id.text1, muligheder);
-
+        ArrayAdapter adapter = new ArrayAdapter(this, R.layout.listeelement, R.id.listeelem_overskrift, muligheder);
         setListAdapter(adapter);
         Log.d("","The list is started");
     }
