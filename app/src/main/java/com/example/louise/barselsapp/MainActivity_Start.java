@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -34,15 +35,19 @@ public class MainActivity_Start extends Activity implements OnItemClickListener 
                 View view = super.getView(position, cachedView, parent);
 
                 TextView beskrivelse = (TextView) view.findViewById(R.id.listeelem_beskrivelse);
+                ImageView billede = (ImageView) view.findViewById(R.id.listeelem_billede);
                 if (position== 0){
                     beskrivelse.setText(beskrivelser[0]);
+                    billede.setImageResource(R.drawable.faq_mark);
                 }
                 else if(position == 1){
                     beskrivelse.setText(beskrivelser[1]);
+                    billede.setImageResource(R.drawable.hospital);
                 }
 
                 else if(position == 2){
                     beskrivelse.setText(beskrivelser[2]);
+                    billede.setImageResource(R.drawable.gravid);
                 }
                 else if(position == 3){
                     beskrivelse.setText(beskrivelser[3]);
