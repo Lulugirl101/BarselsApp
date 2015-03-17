@@ -1,11 +1,8 @@
 package com.example.louise.barselsapp;
 
 import android.app.Activity;
-import android.app.ListActivity;
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.support.v7.internal.widget.AdapterViewCompat;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -33,7 +30,7 @@ public class MainActivity_Start extends Activity implements OnItemClickListener 
             @Override
             public View getView(int position, View cachedView, ViewGroup parent) {
                 View view = super.getView(position, cachedView, parent);
-
+                Log.d("Layout","List layout is beagin set up");
                 TextView beskrivelse = (TextView) view.findViewById(R.id.listeelem_beskrivelse);
                 ImageView billede = (ImageView) view.findViewById(R.id.listeelem_billede);
                 if (position== 0){
@@ -54,8 +51,9 @@ public class MainActivity_Start extends Activity implements OnItemClickListener 
                 }
 
                 else { Log.d("","NO discription");}
-
+                Log.d("Layout","The list wiev have been set up");
                 return view;
+
 
             }
 
@@ -98,38 +96,6 @@ public class MainActivity_Start extends Activity implements OnItemClickListener 
         return super.onOptionsItemSelected(item);
     }
 **/
-  /** public void onListItemClick(ListView s, View v, int position, long id) {
-        if (position==0){
-            Intent i = new Intent(this, FAQ.class);
-            startActivity(i);
-            Log.d("Click","Opening FAQ");
-        }
-
-        else if (position == 1){
-            Intent i = new Intent(this, Videoguides.class);
-            startActivity(i);
-            Log.d("Click","Opening Videoguides");
-        }
-        else if (position == 2){
-            Intent i = new Intent(this, Information.class);
-            startActivity(i);
-            Log.d("Click","Opening Information");
-        }
-
-        else if (position == 3){
-            Intent i = new Intent(this, Chat.class);
-            startActivity(i);
-            Log.d("Click","Opening Chat");
-        }
-
-        else {
-
-            Toast.makeText(this, "There is no activity for this position yet", Toast.LENGTH_SHORT).show();
-        }
-
-
-    } **/
-
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
