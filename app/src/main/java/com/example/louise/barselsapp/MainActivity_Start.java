@@ -47,7 +47,7 @@ public class MainActivity_Start extends Activity implements OnItemClickListener 
 
                 else if(position == 2){
                     beskrivelse.setText(beskrivelser[2]);
-                    billede.setImageResource(R.drawable.gravid);
+                    billede.setImageResource(R.drawable.babyogsoester);
                 }
                 else if(position == 3){
                     beskrivelse.setText(beskrivelser[3]);
