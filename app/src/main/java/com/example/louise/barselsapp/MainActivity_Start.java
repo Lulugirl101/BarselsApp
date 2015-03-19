@@ -62,6 +62,7 @@ public class MainActivity_Start extends Activity implements OnItemClickListener 
         ListView listView = new ListView(this);
         listView.setOnItemClickListener(this);
         listView.setAdapter(adapter);
+        listView.setBackgroundResource(R.drawable.b);
         setContentView(listView);
     }
         //setListAdapter(adapter);

@@ -27,7 +27,7 @@
             android:id="@+id/listeelem_overskrift"
             android:textSize="20sp"
             android:text="overskrift"
-            android:textColor="#ffffff"
+            android:textColor="#ff2b1655"
             android:textStyle="bold"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
