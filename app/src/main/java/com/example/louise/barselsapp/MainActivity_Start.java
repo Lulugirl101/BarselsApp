@@ -23,8 +23,8 @@ public class MainActivity_Start extends Activity implements OnItemClickListener 
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.main_activity_start_layout);
 
-        String[] muligheder = {"FAQ", "Video Guides", "Informationer", "Chat"};
-        final String[] beskrivelser = {"Spørgsmål og svar", "Video guides og information videor", "Nytig information delt ved emner", "Snak med en af vores læger"};
+        String[] muligheder = {"FAQ", "Video Guides", "Informationer", "Chat","Noter"};
+        final String[] beskrivelser = {"Spørgsmål og svar", "Video guides og information videor", "Nytig information delt ved emner", "Snak med en af vores læger","Lav dine egne noter"};
         ArrayAdapter adapter = new ArrayAdapter(this, R.layout.listeelement, R.id.listeelem_overskrift, muligheder) {
 
             @Override
@@ -48,6 +48,10 @@ public class MainActivity_Start extends Activity implements OnItemClickListener 
                 }
                 else if(position == 3){
                     beskrivelse.setText(beskrivelser[3]);
+                    billede.setImageResource(R.drawable.chat);
+                }
+                else if(position == 4){
+                    beskrivelse.setText(beskrivelser[4]);
                 }
 
                 else { Log.d("","NO discription");}
@@ -121,6 +125,12 @@ public class MainActivity_Start extends Activity implements OnItemClickListener 
             Intent i = new Intent(this, Chat.class);
             startActivity(i);
             Log.d("Click","Opening Chat");
+        }
+
+        else if (position == 4){
+            Intent i = new Intent(this, Chat.class);
+            startActivity(i);
+            Log.d("Click","Opening notes");
         }
 
         else {

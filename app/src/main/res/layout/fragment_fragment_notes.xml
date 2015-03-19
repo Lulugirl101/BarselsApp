@@ -24,11 +24,13 @@
 
         <EditText
             android:layout_width="wrap_content"
-            android:layout_height="200dp" />
+            android:layout_height="200dp"
+            android:id="@+id/noteediter"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Add"/>
+            android:text="Add"
+            android:id="@+id/addnotebut"/>
 
 
         </LinearLayout>

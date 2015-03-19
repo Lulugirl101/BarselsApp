@@ -10,6 +10,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 
 public class fragment_notes extends Fragment implements View.OnClickListener {
@@ -17,60 +19,32 @@ public class fragment_notes extends Fragment implements View.OnClickListener {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private Button addnote;
     private EditText note_editor;
+    private String[] noter;
 
     @Override
     public View onCreateView(LayoutInflater i, ViewGroup container,Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-        rod = i.inflate(R.layout.fragment_fragment_notes, container, false);
+        View rod = i.inflate(R.layout.fragment_fragment_notes, container, false);
+        addnote = (Button)rod.findViewById(R.id.addnotebut);
+        note_editor = (EditText) rod.findViewById(R.id.noteediter);
+
+        addnote.setOnClickListener(this);
+
+        return  rod;
+
 
     }
 
-
-
-
-    // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
-    }
-
-    @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
-        try {
-            mListener = (OnFragmentInteractionListener) activity;
-        } catch (ClassCastException e) {
-            throw new ClassCastException(activity.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        mListener = null;
-    }
 
     @Override
     public void onClick(View v) {
-
+        String note = note_editor.getText().toString();
+        note_editor.setText("");
+        noter = noter + note;
     }
 
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p/>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
-    public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        public void onFragmentInteraction(Uri uri);
-    }
+   
+    
 
 }
