@@ -29,8 +29,6 @@ import static com.example.louise.barselsapp.R.layout.listeelement;
 
 public class mainlist_fragment extends Fragment implements AdapterView.OnItemClickListener {
 
-    Context context;
-
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -41,6 +39,7 @@ public class mainlist_fragment extends Fragment implements AdapterView.OnItemCli
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        Log.d("","INside list fragmetent");
         String[] muligheder = {"FAQ", "Video Guides", "Informationer", "Chat", "Noter"};
          final String[] beskrivelser = {"Spørgsmål og svar", "Video guides og information videor", "Nytig information delt ved emner", "Snak med en af vores læger", "Lav dine egne noter"};
         ArrayAdapter adapter = new ArrayAdapter(getActivity(), R.layout.listeelement, R.id.listeelem_overskrift, muligheder) {
@@ -69,6 +68,7 @@ public class mainlist_fragment extends Fragment implements AdapterView.OnItemCli
                     Log.d("", "NO discription");
                 }
                 Log.d("Layout", "The list wiev have been set up");
+
                 return view;
 
 
@@ -76,31 +76,31 @@ public class mainlist_fragment extends Fragment implements AdapterView.OnItemCli
 
 
         };
-        ListView listView = new ListView(context);
+        ListView listView = new ListView(getActivity());
         listView.setOnItemClickListener(this);
         listView.setAdapter(adapter);
 
 
-        return inflater.inflate(R.layout.fragment_mainlist_fragment, container, false);
+        return listView;
     }
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         if (position==0){
-            Toast.makeText(context, "There is no activity for this position yet", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), "There is no activity for this position yet", Toast.LENGTH_SHORT).show();
             Log.d("Click","Opening FAQ");
         }
 
         else if (position == 1){
-            Toast.makeText(context, "There is no activity for this position yet", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), "There is no activity for this position yet", Toast.LENGTH_SHORT).show();
             Log.d("Click","Opening Videoguides");
         }
         else if (position == 2){
-            Toast.makeText(context, "There is no activity for this position yet", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), "There is no activity for this position yet", Toast.LENGTH_SHORT).show();
             Log.d("Click","Opening Information");
         }
 
         else if (position == 3){
-            Toast.makeText(context, "There is no activity for this position yet", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), "There is no activity for this position yet", Toast.LENGTH_SHORT).show();
             Log.d("Click","Opening Chat");
         }
 
@@ -114,7 +114,7 @@ public class mainlist_fragment extends Fragment implements AdapterView.OnItemCli
 
         else {
 
-            Toast.makeText(context, "There is no activity for this position yet", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), "There is no activity for this position yet", Toast.LENGTH_SHORT).show();
         }
     }
 
