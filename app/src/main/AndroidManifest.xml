@@ -10,10 +10,9 @@
         <activity
             android:name=".MainActivity_Start"
             android:label="@string/app_name" >
-
         </activity>
         <activity
-            android:name=".Splash"
+            android:name="com.example.louise.barelsappfrac.Startactivity"
             android:label="Barsels App" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,7 +21,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".FAQ"
+            android:name="com.example.louise.barselsapp.FAQ"
             android:label="@string/title_activity_faq" >
         </activity>
         <activity

@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.louise.barselsapp.fragment_notes">
+    tools:context="com.example.louise.barelsappfrac.fragment_notes">
 
     <!-- TODO: Update blank fragment layout -->
     <LinearLayout
@@ -34,8 +34,9 @@
             android:id="@+id/addnotebut"/>
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="100dp"
-            android:id="@+id/shownote"/>
+            android:layout_height="wrap_content"
+            android:id="@+id/shownote"
+            android:text="Your notes: "/>
 
 
         </LinearLayout>
