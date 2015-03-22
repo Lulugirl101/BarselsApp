@@ -46,6 +46,7 @@ public class fragment_notes extends Fragment implements View.OnClickListener {
         String note = note_editor.getText().toString();
         note_editor.setText("");
         shownotes.setText(note);
+
     }
 
    

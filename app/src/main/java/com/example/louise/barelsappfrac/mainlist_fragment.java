@@ -1,13 +1,17 @@
 package com.example.louise.barelsappfrac;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.FragmentTransaction;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
+import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -80,28 +84,59 @@ public class mainlist_fragment extends Fragment implements AdapterView.OnItemCli
         listView.setOnItemClickListener(this);
         listView.setAdapter(adapter);
 
-
         return listView;
     }
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         if (position==0){
-            Toast.makeText(getActivity(), "There is no activity for this position yet", Toast.LENGTH_SHORT).show();
+            getFragmentManager().beginTransaction()
+                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                    .replace(R.id.fragmentindhold1, new FQA_fragment())
+                    .addToBackStack(null)
+                    .commit();
             Log.d("Click","Opening FAQ");
         }
 
         else if (position == 1){
-            Toast.makeText(getActivity(), "There is no activity for this position yet", Toast.LENGTH_SHORT).show();
+            getFragmentManager().beginTransaction()
+                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                    .replace(R.id.fragmentindhold1, new Video_fragment())
+                    .addToBackStack(null)
+                    .commit();
             Log.d("Click","Opening Videoguides");
         }
         else if (position == 2){
-            Toast.makeText(getActivity(), "There is no activity for this position yet", Toast.LENGTH_SHORT).show();
+            getFragmentManager().beginTransaction()
+                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                    .replace(R.id.fragmentindhold1, new Infomation_frag())
+                    .addToBackStack(null)
+                    .commit();
             Log.d("Click","Opening Information");
         }
 
         else if (position == 3){
-            Toast.makeText(getActivity(), "There is no activity for this position yet", Toast.LENGTH_SHORT).show();
-            Log.d("Click","Opening Chat");
+
+            AlertDialog.Builder internetconect = new AlertDialog.Builder(getActivity());
+            internetconect.setTitle("Internet forbindelse");
+            internetconect.setMessage("Denne aktivitet kræver internet. Vi foreslår en sikker WiFi conection.\nEr du tilsluttet en internet forbindelse?");
+            internetconect.setPositiveButton("Ja, jeg har internet",new AlertDialog.OnClickListener() {
+
+                public void onClick(DialogInterface arg0, int arg1) {
+                    getFragmentManager().beginTransaction()
+                            .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                            .replace(R.id.fragmentindhold1, new Chat_frag())
+                            .addToBackStack(null)
+                            .commit();
+                    Log.d("Click","Opening Chat");
+                }
+            });
+            internetconect.setNegativeButton("Nej, jeg har ikke internet", new AlertDialog.OnClickListener() {
+
+                public void onClick(DialogInterface arg0, int arg1) {
+                    Toast.makeText(getActivity(), "Du har ikke internetforbindelse.\nPrøv igen når du har forbindelse", Toast.LENGTH_LONG).show();
+                }
+            });
+            internetconect.show();
         }
 
         else if (position == 4){
@@ -110,6 +145,7 @@ public class mainlist_fragment extends Fragment implements AdapterView.OnItemCli
                     .replace(R.id.fragmentindhold1, new fragment_notes())
                     .addToBackStack(null)
                     .commit();
+            Log.d("Click","Opening Notes");
         }
 
         else {
