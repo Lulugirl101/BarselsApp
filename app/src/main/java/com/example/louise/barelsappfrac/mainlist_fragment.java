@@ -1,17 +1,15 @@
 package com.example.louise.barelsappfrac;
 
-import android.app.Activity;
+
 import android.app.AlertDialog;
 import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
-import android.net.Uri;
-import android.net.wifi.WifiManager;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,18 +20,13 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.louise.barselsapp.Chat;
-import com.example.louise.barselsapp.FAQ;
-import com.example.louise.barselsapp.Information;
 import com.example.louise.barselsapp.R;
-import com.example.louise.barselsapp.Videoguides;
 
-import static com.example.louise.barselsapp.R.layout.listeelement;
 
 
 public class mainlist_fragment extends Fragment implements AdapterView.OnItemClickListener {
 
-
+//Første Fragment ,der indeholder mainlist, start menuen
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,11 +36,12 @@ public class mainlist_fragment extends Fragment implements AdapterView.OnItemCli
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        Log.d("","INside list fragmetent");
+        //Sætter listview op
+        Log.d("","Inside list fragmetent");
         String[] muligheder = {"FAQ", "Video Guides", "Informationer", "Chat", "Noter"};
          final String[] beskrivelser = {"Spørgsmål og svar", "Video guides og information videor", "Nytig information delt ved emner", "Snak med en af vores læger", "Lav dine egne noter"};
         ArrayAdapter adapter = new ArrayAdapter(getActivity(), R.layout.listeelement, R.id.listeelem_overskrift, muligheder) {
-
+            //udvider listview
             @Override
             public View getView(int position, View cachedView, ViewGroup parent) {
                 View view = super.getView(position, cachedView, parent);
@@ -88,61 +82,113 @@ public class mainlist_fragment extends Fragment implements AdapterView.OnItemCli
     }
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        //Henter de forskellgie fragmenter afhængig af brugerens valg.
         if (position==0){
+            //FAQ fragment er valgt
+            Bundle args = new Bundle();
+            args.putInt("Pos",0);
+            FragmentActivityman f = new FragmentActivityman();
+            f.setArguments(args);
+            //fragment_activityman_lay.setArguments(args);
             getFragmentManager().beginTransaction()
                     .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-                    .replace(R.id.fragmentindhold1, new FQA_fragment())
+                    .replace(R.id.fragmentindhold1,f )
                     .addToBackStack(null)
                     .commit();
             Log.d("Click","Opening FAQ");
         }
 
         else if (position == 1){
+            // Video guides er valgt
+            Bundle args = new Bundle();
+            args.putInt("Pos",1);
+            FragmentActivityman f = new FragmentActivityman();
+            f.setArguments(args);
+            //fragment_activityman_lay.setArguments(args);
             getFragmentManager().beginTransaction()
                     .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-                    .replace(R.id.fragmentindhold1, new Video_fragment())
+                    .replace(R.id.fragmentindhold1,f )
                     .addToBackStack(null)
                     .commit();
             Log.d("Click","Opening Videoguides");
         }
         else if (position == 2){
+            //Informations fragment.
+            Bundle args = new Bundle();
+            args.putInt("Pos",2);
+            FragmentActivityman f = new FragmentActivityman();
+            f.setArguments(args);
+            //fragment_activityman_lay.setArguments(args);
             getFragmentManager().beginTransaction()
                     .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-                    .replace(R.id.fragmentindhold1, new Infomation_frag())
+                    .replace(R.id.fragmentindhold1,f )
                     .addToBackStack(null)
                     .commit();
             Log.d("Click","Opening Information");
         }
 
         else if (position == 3){
+            //Chat fragmentet bruger internet og video chat, og derfor undersøger vi om der er wifi.
+            ConnectivityManager connManager = (ConnectivityManager) getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
+            NetworkInfo mWifi = connManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
 
-            AlertDialog.Builder internetconect = new AlertDialog.Builder(getActivity());
-            internetconect.setTitle("Internet forbindelse");
-            internetconect.setMessage("Denne aktivitet kræver internet. Vi foreslår en sikker WiFi conection.\nEr du tilsluttet en internet forbindelse?");
-            internetconect.setPositiveButton("Ja, jeg har internet",new AlertDialog.OnClickListener() {
+            if (mWifi.isConnected()) { //Hvis der er wifi åbnes fragmentet uden viddere
+                Log.d("Wifi", "WIFI is connected");
+                Toast.makeText(getActivity(), "WIFI connected", Toast.LENGTH_SHORT).show();
+                Bundle args = new Bundle();
+                args.putInt("Pos",3);
+                FragmentActivityman f = new FragmentActivityman();
+                f.setArguments(args);
+                //fragment_activityman_lay.setArguments(args);
+                getFragmentManager().beginTransaction()
+                        .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                        .replace(R.id.fragmentindhold1, f)
+                        .addToBackStack(null)
+                        .commit();
+                Log.d("Click","Opening Chat");
+            }
 
-                public void onClick(DialogInterface arg0, int arg1) {
-                    getFragmentManager().beginTransaction()
-                            .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-                            .replace(R.id.fragmentindhold1, new Chat_frag())
-                            .addToBackStack(null)
-                            .commit();
-                    Log.d("Click","Opening Chat");
-                }
-            });
-            internetconect.setNegativeButton("Nej, jeg har ikke internet", new AlertDialog.OnClickListener() {
+            else { // Hvis ikke der er wifi , bliver brugeren bedt om at forsætte selvom der ikke er tilsluttet wifi.
+                AlertDialog.Builder internetconect = new AlertDialog.Builder(getActivity());
+                internetconect.setTitle("Internet forbindelse");
+                internetconect.setMessage("Denne aktivitet kræver internet. Vi foreslår en sikker WiFi conection.\nEr du tilsluttet en internet forbindelse?");
+                internetconect.setPositiveButton("Ja, jeg har internet",new AlertDialog.OnClickListener() {
 
-                public void onClick(DialogInterface arg0, int arg1) {
-                    Toast.makeText(getActivity(), "Du har ikke internetforbindelse.\nPrøv igen når du har forbindelse", Toast.LENGTH_LONG).show();
-                }
-            });
-            internetconect.show();
+                    public void onClick(DialogInterface arg0, int arg1) {
+                        Toast.makeText(getActivity(), "Network connected", Toast.LENGTH_SHORT).show();
+                        Bundle args = new Bundle();
+                        args.putInt("Pos",3);
+                        FragmentActivityman f = new FragmentActivityman();
+                        f.setArguments(args);
+                        //fragment_activityman_lay.setArguments(args);
+                        getFragmentManager().beginTransaction()
+                                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                                .replace(R.id.fragmentindhold1, f)
+                                .addToBackStack(null)
+                                .commit();
+                        Log.d("Click","Opening Chat");
+                    }
+                });
+                internetconect.setNegativeButton("Nej, jeg har ikke internet", new AlertDialog.OnClickListener() {
+
+                    public void onClick(DialogInterface arg0, int arg1) {
+                        Toast.makeText(getActivity(), "Du har ikke internetforbindelse.\nPrøv igen når du har forbindelse", Toast.LENGTH_LONG).show();
+                    }
+                });
+                internetconect.show();
+            }
+
         }
 
-        else if (position == 4){
+        else if (position == 4){ //Note fragment
+            Bundle args = new Bundle();
+            args.putInt("Pos",4);
+            FragmentActivityman f = new FragmentActivityman();
+            f.setArguments(args);
+            //fragment_activityman_lay.setArguments(args);
             getFragmentManager().beginTransaction()
                     .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-                    .replace(R.id.fragmentindhold1, new fragment_notes())
+                    .replace(R.id.fragmentindhold1,f )
                     .addToBackStack(null)
                     .commit();
             Log.d("Click","Opening Notes");

@@ -7,14 +7,13 @@ import android.os.Handler;
 import android.util.Log;
 import android.widget.ImageView;
 
-import com.example.louise.barselsapp.MainActivity_Start;
 import com.example.louise.barselsapp.R;
 
 
 public class Splash1 extends Activity implements Runnable {
     Handler handler = new Handler();
     static Splash1 aktivitetDerVisesNu = null;
-
+    //Spash aktivitet. TODO: Implementer til sidst.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

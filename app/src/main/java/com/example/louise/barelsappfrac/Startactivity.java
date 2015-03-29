@@ -1,16 +1,14 @@
 package com.example.louise.barelsappfrac;
 
-import android.app.Activity;
-import android.support.v7.app.ActionBarActivity;
+
+import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 
 import com.example.louise.barselsapp.R;
 
-public class Startactivity extends Activity {
-
+public class Startactivity extends FragmentActivity {
+    //Start aktivitet der indeholder det pladsen til fragmentet.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,7 +17,7 @@ public class Startactivity extends Activity {
 
         if (savedInstanceState == null) {
             mainlist_fragment fragment = new mainlist_fragment();
-            getFragmentManager().beginTransaction()
+            getSupportFragmentManager().beginTransaction()
                     .add(R.id.fragmentindhold1, fragment) // tom container i layout
                     .commit();
         }

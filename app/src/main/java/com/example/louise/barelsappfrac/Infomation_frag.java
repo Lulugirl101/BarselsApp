@@ -1,6 +1,6 @@
 package com.example.louise.barelsappfrac;
 
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,8 +8,11 @@ import android.view.ViewGroup;
 
 import com.example.louise.barselsapp.R;
 
+// Infomation framgent, der skal indeholde det udleverede marteriale. lige pt pdf.
+//TODO: Find måde at implementere , det udleverede Hospital marteriale.
 
 public class Infomation_frag extends Fragment {
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

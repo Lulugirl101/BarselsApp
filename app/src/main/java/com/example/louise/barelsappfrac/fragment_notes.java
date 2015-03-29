@@ -1,9 +1,7 @@
 package com.example.louise.barelsappfrac;
 
-import android.app.Activity;
-import android.net.Uri;
 import android.os.Bundle;
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,9 +11,10 @@ import android.widget.TextView;
 
 import com.example.louise.barselsapp.R;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 
+
+// Note fragment, hvor brugeren skal være istand til at tage noter, gemme og editere i dem.
+// TODO: make file format for note
 
 public class fragment_notes extends Fragment implements View.OnClickListener {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -43,6 +42,7 @@ public class fragment_notes extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
+        //Add bottom
         String note = note_editor.getText().toString();
         note_editor.setText("");
         shownotes.setText(note);
