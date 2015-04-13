@@ -27,7 +27,6 @@
                 android:layout_height="50dp"
                 android:scaleType="fitCenter"
                 android:src="@drawable/notes"
-
                 android:layout_alignParentRight="true"
                 android:id="@+id/nynote"/>
             </LinearLayout>
