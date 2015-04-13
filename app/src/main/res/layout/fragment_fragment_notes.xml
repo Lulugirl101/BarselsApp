@@ -3,11 +3,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.louise.barelsappfrac.fragment_notes">
-
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical">
 
         <TextView android:layout_width="match_parent"
@@ -16,30 +18,66 @@
             android:textSize="30sp"
             android:textColor="#ff2b1655"
             android:textStyle="bold"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Skriv og redigerer i dine egne noter."
+            android:textSize="15dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="Titel:"
+            android:textSize="20dp"
+            android:autoText="false"
+            android:id="@+id/titel" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="top"
+            android:text="..."
+            android:background="#ffd9beff"
+            android:id="@+id/titeleditor"/>
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:text="Skriv og redigerer i dine egne noter herunder"
-            android:textSize="15dp"/>
+            android:layout_height="30dp"
+            android:text="Note:"
+            android:textSize="20dp"/>
 
         <EditText
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:id="@+id/noteediter"/>
+            android:text="fft"
+            android:gravity="top"
+            android:id="@+id/noteediter"
+            android:selectAllOnFocus="false"
+            android:background="#ffd9beff" />
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Add"
-            android:id="@+id/addnotebut"/>
+            android:id="@+id/addnotebut"
+            android:textColor="#ff2b1655"
+            />
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+        <Button
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/shownote"
-            android:text="Your notes: "/>
+            android:textAllCaps="false"
+            android:text="Mine noter"
+            android:textSize="20dp"
+            android:id="@+id/my_notes_but"
+            android:textColor="#ff2b1655"
+            />
 
 
-        </LinearLayout>
+    </LinearLayout>
+
+    </ScrollView>
+
+
 
 
 

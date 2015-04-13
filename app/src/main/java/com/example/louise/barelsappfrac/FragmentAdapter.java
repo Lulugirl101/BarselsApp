@@ -34,7 +34,7 @@ public class FragmentAdapter extends FragmentPagerAdapter {
                 fragment = new Chat_frag();
                 break;
             case 4:
-                fragment = new fragment_notes();
+                fragment = new Placeholder_frag();
                 break;
         }
         return fragment;
