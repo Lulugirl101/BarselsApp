@@ -28,7 +28,7 @@ public class Placeholder_frag extends Fragment {
                              Bundle savedInstanceState) {
         getFragmentManager().beginTransaction()
                 .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-                .replace(R.id.fragmentholder, new Listnotes_frag())
+                .replace(R.id.fragmentholder, new List_notefragment())
                 .commit();
         Log.d("layout","Holder sat up");
 

@@ -110,7 +110,7 @@ public class fragment_notes extends Fragment implements View.OnClickListener {
 
             getFragmentManager().beginTransaction()
                     .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-                    .replace(R.id.fragmentholder, new Listnotes_frag())
+                    .replace(R.id.fragmentholder, new List_notefragment())
                     .addToBackStack(null)
                     .commit();
 
