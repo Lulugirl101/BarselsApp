@@ -17,7 +17,7 @@ import com.example.louise.barselsapp.R;
 // Frequentlt asked questions. Skal indeholde en liste med mest stillede spørgsmål
 // Source : http://stackoverflow.com/questions/24083886/expandablelistview-in-fragment-issue
 // Datasource: https://www.rigshospitalet.dk/afdelinger-og-klinikker/julianemarie/obstetrisk-klinik/efter-foedslen-barsel/amning/Sider/ofte-stillede-spoergsmaal--faq.aspx#hvorforamme
-// TODO: Make list with questions, That exspand.
+
 public class FQA_fragment extends Fragment {
 
     View rootView;
@@ -34,7 +34,7 @@ public class FQA_fragment extends Fragment {
         groups = res.getStringArray(R.array.fagtitels);
        // groups = new String[]{R.string.faq1, "Test Header 2", "Test Header 3", "Test Header 4"};
 
-        children = new String[][]{
+        children = new String[][]{  //Todo: make backend med alt dette text
                 {"Det er perfekt ernæring til jeres barn.\n" +
                         "Der er tæt kontakt mellem mor og barn.\n" +
                         "Det er praktisk og nemt.\n" +

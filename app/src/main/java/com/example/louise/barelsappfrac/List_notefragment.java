@@ -67,7 +67,20 @@ public class List_notefragment extends Fragment implements AdapterView.OnItemCli
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Toast.makeText(getActivity(), "Klik på " + position, Toast.LENGTH_SHORT).show();
+        String notename = ((TextView)view.findViewById(android.R.id.text1)).getText().toString();
+        Log.d("Item",notename);
+        Bundle args = new Bundle();
+        args.putString("TitelFile",notename);
+        Shownotes_frag d = new Shownotes_frag();
+        d.setArguments(args);
+        getFragmentManager().beginTransaction()
+                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                .replace(R.id.fragmentholder,d)
+                .addToBackStack(null)
+                .commit();
+        Log.d("Fragment","fragment replacing");
+        Toast.makeText(getActivity(), "Åbner "+ notename, Toast.LENGTH_SHORT).show();
+
 
     }
 
@@ -127,6 +140,7 @@ public class List_notefragment extends Fragment implements AdapterView.OnItemCli
                 .commit();
         Log.d("Fragment","fragment replacing");
     }
+
        //POPUP menu to delete an edit in notes TODO: fix visual errors
     private void showPopup(final View v, final String itemtit){
         Log.d("Menu","Show popups");
@@ -141,12 +155,12 @@ public class List_notefragment extends Fragment implements AdapterView.OnItemCli
                     case R.id.menu1:
                         Log.d("Items","Edit note selcedted");
                         editNote(itemtit);
-                        Toast.makeText(getActivity(),item.toString(),Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(),"Edit "+ item.toString(),Toast.LENGTH_SHORT).show();
                         return true;
                     case R.id.menu2:
                         Log.d("Items","Remove note selected");
                         deleteNote(itemtit);
-                        Toast.makeText(getActivity(), "Remove note", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), "Removing note"+ itemtit, Toast.LENGTH_SHORT).show();
                         return true;
                     default:
                         return true;
