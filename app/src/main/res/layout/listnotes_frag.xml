@@ -18,6 +18,7 @@
             <TextView android:layout_width="wrap_content"
                 android:layout_height="50dp"
                 android:text="Mine noter "
+                android:layout_weight="1"
                 android:textSize="30sp"
                 android:textColor="#ff2b1655"
                 android:textStyle="bold"/>
@@ -27,7 +28,7 @@
                 android:layout_height="50dp"
                 android:scaleType="fitCenter"
                 android:src="@drawable/notes"
-                android:layout_alignParentRight="true"
+                android:layout_gravity="right"
                 android:id="@+id/nynote"/>
             </LinearLayout>
 

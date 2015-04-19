@@ -33,12 +33,15 @@ public class fragment_notes extends Fragment implements View.OnClickListener {
     private EditText note_editor,titel_editor;
     private TextView shownotes;
     private ArrayList<String> notes = new ArrayList<String>();
+    String ititel,inote;
+    Filehandler fileH;
     public Boolean frag_my_notes;
     int i, j;
 
     @Override
     public View onCreateView(LayoutInflater i, ViewGroup container,Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        fileH =  new Filehandler(getActivity().getFilesDir().toString());
         int size = PreferenceManager.getDefaultSharedPreferences(getActivity())
                 .getInt("size",0);
         View rod = i.inflate(R.layout.fragment_fragment_notes, container, false);
@@ -53,6 +56,17 @@ public class fragment_notes extends Fragment implements View.OnClickListener {
         //Tilføjer de to knapper.
         addnote.setOnClickListener(this);
         mynotes.setOnClickListener(this);
+        if (getArguments()!=null){
+            ititel = getArguments().getString("TitelFile");
+            Log.d("arg",ititel);
+            titel_editor.setText(ititel);
+            Filehandler fileH = new Filehandler(getActivity().getFilesDir().toString());
+            inote = fileH.read(ititel);
+            note_editor.setText(inote);
+        }
+        else
+        {Log.d("arg","No argumetns");
+        }
 
         return  rod;
 
@@ -66,15 +80,15 @@ public class fragment_notes extends Fragment implements View.OnClickListener {
         if(v == addnote) {
             //Add bottom
             Log.d("Noter", "Adding note");
-            String note = note_editor.getText().toString();
             String filename = titel_editor.getText().toString();
+            String note = note_editor.getText().toString();
+
             Log.d("Noter", note);
-            String dir = getActivity().getFilesDir().toString();
-            Log.d("Noter", dir.toString());
-            Filehandler fileH = new Filehandler();
-            fileH.write(filename, note, dir);
-            if (fileH.write(filename, note, dir)) {
-                Toast.makeText(getActivity(), filename + ".txt created", Toast.LENGTH_SHORT).show();
+
+            Filehandler fileH = new Filehandler(getActivity().getFilesDir().toString());
+            fileH.write(filename, note);
+            if (fileH.write(filename, note)) {
+                Toast.makeText(getActivity(), filename + "created", Toast.LENGTH_SHORT).show();
             } else {
                 Toast.makeText(getActivity(), "I/O error", Toast.LENGTH_SHORT).show();
             }
@@ -82,32 +96,12 @@ public class fragment_notes extends Fragment implements View.OnClickListener {
             note_editor.setText("");
             titel_editor.setText("");
 
-           /* if (notes == null){
-                ArrayList notes = new ArrayList<String>();
-                notes.add(filename);
 
-            }
-            else {
-                notes.add(filename);
-
-            }*/
-            notes.add(filename);
-            Log.d("Notelist",notes.toString());
-
-            SharedPreferences sPref = PreferenceManager.getDefaultSharedPreferences(getActivity());
-            SharedPreferences.Editor sEdit = sPref.edit();
-
-            for (int i=0;i<notes.size();i++ );
-            {
-                sEdit.putString("Note"+i,notes.get(i));
-            }
-            sEdit.putInt("size",notes.size());
-            sEdit.commit();
 
         }
         if (v == mynotes){
             Log.d("Notes","Showing my notes");
-
+            //TODO: Make updatelist with right files drievtry and data
             getFragmentManager().beginTransaction()
                     .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
                     .replace(R.id.fragmentholder, new List_notefragment())

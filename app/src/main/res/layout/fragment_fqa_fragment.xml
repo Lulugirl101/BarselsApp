@@ -16,17 +16,13 @@
         android:textColor="#ff2b1655"
         android:textStyle="bold"/>
 
-        <!--  <com.viewpagerindicator.TitlePageIndicator
-              android:id="@+id/titles"
-              android:layout_height="wrap_content"
-              android:layout_width="fill_parent"
-              android:foooterIndicatorStyle= "underline" />
-          <android.support.v4.view.ViewPager
-              android:id="@+id/pager"
-              android:layout_width="match_parent"
-              android:layout_height="0dp"
-              android:layout_weight="1"
-              /> -->
+        <ExpandableListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/exlist">
+
+            </ExpandableListView>
+
       </LinearLayout>
 
 
