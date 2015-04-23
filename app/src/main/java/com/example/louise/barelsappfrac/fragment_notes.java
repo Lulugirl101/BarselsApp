@@ -31,13 +31,18 @@ public class fragment_notes extends Fragment implements View.OnClickListener {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private Button addnote,mynotes;
     private EditText note_editor,titel_editor;
-    private TextView shownotes;
+    private TextView shownotes,fragtitel;
     private ArrayList<String> notes = new ArrayList<String>();
     String ititel,inote;
     Filehandler fileH;
     public Boolean frag_my_notes;
     int i, j;
 
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+    }
     @Override
     public View onCreateView(LayoutInflater i, ViewGroup container,Bundle savedInstanceState) {
         // Inflate the layout for this fragment
@@ -49,6 +54,7 @@ public class fragment_notes extends Fragment implements View.OnClickListener {
         note_editor = (EditText) rod.findViewById(R.id.noteediter);
         titel_editor = (EditText)rod.findViewById(R.id.titeleditor);
         mynotes =(Button)rod.findViewById(R.id.my_notes_but);
+        fragtitel =(TextView)rod.findViewById(R.id.fragtitel);
 
         //ArrayList notes = new ArrayList<String>();
         //notes.add("First entry");
@@ -63,6 +69,7 @@ public class fragment_notes extends Fragment implements View.OnClickListener {
             Filehandler fileH = new Filehandler(getActivity().getFilesDir().toString());
             inote = fileH.read(ititel);
             note_editor.setText(inote);
+            fragtitel.setText("Edit noter");
         }
         else
         {Log.d("arg","No argumetns");
@@ -88,7 +95,7 @@ public class fragment_notes extends Fragment implements View.OnClickListener {
             Filehandler fileH = new Filehandler(getActivity().getFilesDir().toString());
             fileH.write(filename, note);
             if (fileH.write(filename, note)) {
-                Toast.makeText(getActivity(), filename + "created", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), filename + " created", Toast.LENGTH_SHORT).show();
             } else {
                 Toast.makeText(getActivity(), "I/O error", Toast.LENGTH_SHORT).show();
             }
@@ -108,19 +115,15 @@ public class fragment_notes extends Fragment implements View.OnClickListener {
                     .addToBackStack(null)
                     .commit();
 
-
-
-
-
-
-
-
-
         }
 
     }
 
-   
-    
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+
+        super.onSaveInstanceState(outState); // gem indhold for alle views med id
+    }
 
 }

@@ -3,9 +3,11 @@
     <group android:id="@+id/group_popupmenu">
         <item android:id="@+id/menu1"
             android:title="Edit File"
+            android:textSize="15dp"
             />
         <item android:id="@+id/menu2"
-            android:title="Delete File"/>
+            android:title="Delete File"
+            android:textSize="15dp"/>
 
     </group>
 </menu>
