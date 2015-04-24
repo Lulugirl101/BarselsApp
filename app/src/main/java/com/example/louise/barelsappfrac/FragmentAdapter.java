@@ -6,6 +6,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 public class FragmentAdapter extends FragmentPagerAdapter {
+    private Fragment[] fragmenter = new Fragment[7];
 
     // Fragments adapter der håndtere de forskelige fragmenter i viewpageren.
 
@@ -19,7 +20,8 @@ public class FragmentAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position)
     {
         // Sætter de forskellige fragmener op i rækkefølge
-        Fragment fragment = new FQA_fragment();
+        Fragment fragment = null;// fragmenter[position];
+        if (fragment!=null) return fragment;
         switch(position){
             case 0:
                 fragment = new FQA_fragment();
@@ -37,6 +39,7 @@ public class FragmentAdapter extends FragmentPagerAdapter {
                 fragment = new Placeholder_frag();
                 break;
         }
+        fragmenter[position] = fragment;
         return fragment;
     }
 

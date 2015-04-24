@@ -1,9 +1,8 @@
 package com.example.louise.barelsappfrac;
 
-import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.FragmentTransaction;
-import android.content.ClipData;
-import android.net.Uri;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -21,10 +20,9 @@ import android.widget.Toast;
 
 import com.example.louise.barselsapp.R;
 
-import java.io.File;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
+
+
 
 public class List_notefragment extends Fragment implements AdapterView.OnItemClickListener,View.OnClickListener,AdapterView.OnItemLongClickListener {
 
@@ -79,7 +77,7 @@ public class List_notefragment extends Fragment implements AdapterView.OnItemCli
                 .addToBackStack(null)
                 .commit();
         Log.d("Fragment","fragment replacing");
-        Toast.makeText(getActivity(), "Åbner "+ notename, Toast.LENGTH_SHORT).show();
+
 
 
     }
@@ -88,11 +86,7 @@ public class List_notefragment extends Fragment implements AdapterView.OnItemCli
     public void onClick(View v) {
         Log.d("Click","Button pressed");
 
-        getFragmentManager().beginTransaction()
-                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-                .replace(R.id.fragmentholder, new fragment_notes())
-                .addToBackStack(null)
-                .commit();
+        new New_edit_note().show(getFragmentManager(), "dialog");
     }
 
     @Override
@@ -129,7 +123,10 @@ public class List_notefragment extends Fragment implements AdapterView.OnItemCli
     public void editNote(String itmtit)
     {
         Log.d("Notes","Edit note called");
-        Bundle args = new Bundle();
+         New_edit_note new_edit = New_edit_note.newInstance(
+                itmtit);
+        new_edit.show(getFragmentManager(), "dialog");
+       /* Bundle args = new Bundle();
         args.putString("TitelFile",itmtit);
         fragment_notes d = new fragment_notes();
         d.setArguments(args);
@@ -137,7 +134,7 @@ public class List_notefragment extends Fragment implements AdapterView.OnItemCli
                 .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
                 .replace(R.id.fragmentholder,d)
                 .addToBackStack(null)
-                .commit();
+                .commit();*/
         Log.d("Fragment","fragment replacing");
     }
 
@@ -170,11 +167,11 @@ public class List_notefragment extends Fragment implements AdapterView.OnItemCli
         popm.show();
     }
 
-  /*  @Override
+    @Override
     public void onResume() {
         super.onResume();
         Log.d("Notes","Notelist resume");
         ((ArrayAdapter) listViewNotes.getAdapter()).notifyDataSetChanged();
-    } */
+    }
 
 }

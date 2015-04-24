@@ -26,15 +26,24 @@ public class Placeholder_frag extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        getFragmentManager().beginTransaction()
-                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-                .replace(R.id.fragmentholder, new List_notefragment())
-                .commit();
-        Log.d("layout","Holder sat up");
+
+        if (savedInstanceState==null) {
+            getFragmentManager().beginTransaction()
+                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                    .replace(R.id.fragmentholder, new List_notefragment())
+                    .commit();
+
+        }
+        Log.d("layout","Holder sat up "+this+savedInstanceState);
 
         return inflater.inflate(R.layout.placeholder_frag_layout, container, false);
     }
 
 
-
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        outState.putInt("jek",42);
+        Log.d("layout","Holder sat up "+this+outState);
+        super.onSaveInstanceState(outState);
+    }
 }

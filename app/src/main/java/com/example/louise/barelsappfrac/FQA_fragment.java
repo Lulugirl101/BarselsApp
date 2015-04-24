@@ -1,18 +1,25 @@
 package com.example.louise.barelsappfrac;
 
 
+import android.app.Dialog;
+import android.app.DialogFragment;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ExpandableListView;
 import android.widget.TextView;
 
 
 import com.example.louise.barselsapp.R;
+
+import java.util.ArrayList;
 
 // Frequentlt asked questions. Skal indeholde en liste med mest stillede spørgsmål
 // Source : http://stackoverflow.com/questions/24083886/expandablelistview-in-fragment-issue
@@ -212,4 +219,6 @@ public class FQA_fragment extends Fragment {
 
 
     }
+
+
 }

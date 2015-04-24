@@ -50,10 +50,10 @@ public class fragment_notes extends Fragment implements View.OnClickListener {
         int size = PreferenceManager.getDefaultSharedPreferences(getActivity())
                 .getInt("size",0);
         View rod = i.inflate(R.layout.fragment_fragment_notes, container, false);
-        addnote = (Button)rod.findViewById(R.id.addnotebut);
+        //addnote = (Button)rod.findViewById(R.id.addnotebut);
         note_editor = (EditText) rod.findViewById(R.id.noteediter);
         titel_editor = (EditText)rod.findViewById(R.id.titeleditor);
-        mynotes =(Button)rod.findViewById(R.id.my_notes_but);
+       //mynotes =(Button)rod.findViewById(R.id.my_notes_but);
         fragtitel =(TextView)rod.findViewById(R.id.fragtitel);
 
         //ArrayList notes = new ArrayList<String>();
