@@ -76,8 +76,7 @@ public class BenytVideoView extends Fragment implements OnClickListener {
         videoView.setVideoURI(Uri.parse(vurl));
         videoView.setMediaController(new MediaController(getActivity()));
         videoView.requestFocus();
-        int rotation = getActivity().getWindowManager().getDefaultDisplay()
-                .getRotation();
+
 
         videoView.start();
 
