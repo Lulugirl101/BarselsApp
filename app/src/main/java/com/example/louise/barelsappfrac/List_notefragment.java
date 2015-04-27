@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.PopupMenu;
@@ -67,7 +68,10 @@ public class List_notefragment extends Fragment implements AdapterView.OnItemCli
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         String notename = ((TextView)view.findViewById(android.R.id.text1)).getText().toString();
         Log.d("Item",notename);
-        Bundle args = new Bundle();
+        Show_note sn = Show_note.newInstance(
+                notename);
+        sn.show(getFragmentManager(), "dialog");
+        /*Bundle args = new Bundle();
         args.putString("TitelFile",notename);
         Shownotes_frag d = new Shownotes_frag();
         d.setArguments(args);
@@ -75,7 +79,7 @@ public class List_notefragment extends Fragment implements AdapterView.OnItemCli
                 .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
                 .replace(R.id.fragmentholder,d)
                 .addToBackStack(null)
-                .commit();
+                .commit();*/
         Log.d("Fragment","fragment replacing");
 
 
@@ -92,9 +96,25 @@ public class List_notefragment extends Fragment implements AdapterView.OnItemCli
     @Override
     public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
        Log.d("Click", "Long click detected");
-        String listtext = ((TextView)view.findViewById(android.R.id.text1)).getText().toString();
+        final String listtext = ((TextView)view.findViewById(android.R.id.text1)).getText().toString();
         Log.d("Item",listtext);
-        showPopup(getView(), listtext);
+        AlertDialog.Builder dialog = new AlertDialog.Builder(getActivity());
+        dialog.setTitle(listtext);
+        dialog.setPositiveButton("Edit", new AlertDialog.OnClickListener() {
+
+            public void onClick(DialogInterface arg0, int arg1) {
+                editNote(listtext);
+            }
+        });
+        dialog.setNegativeButton("Delete", new AlertDialog.OnClickListener() {
+
+            public void onClick(DialogInterface arg0, int arg1) {
+                deleteNote(listtext);
+            }
+        });
+        dialog.show();
+
+       // showPopup(getView(), listtext);
        // mynotes.remove(position);
         //((ArrayAdapter) listViewNotes.getAdapter()).notifyDataSetChanged();
         //Toast.makeText(getActivity(), "Removed the country" + position, Toast.LENGTH_SHORT).show();
@@ -139,7 +159,7 @@ public class List_notefragment extends Fragment implements AdapterView.OnItemCli
     }
 
        //POPUP menu to delete an edit in notes TODO: fix visual errors
-    private void showPopup(final View v, final String itemtit){
+ /*   private void showPopup(final View v, final String itemtit){
         Log.d("Menu","Show popups");
         PopupMenu popm = new PopupMenu(getActivity(),v);
         popm.getMenuInflater().inflate(R.menu.popupnotes,popm.getMenu());
@@ -165,7 +185,7 @@ public class List_notefragment extends Fragment implements AdapterView.OnItemCli
             }
         });
         popm.show();
-    }
+    }*/
 
     @Override
     public void onResume() {
