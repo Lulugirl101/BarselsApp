@@ -19,7 +19,7 @@
                 android:layout_height="50dp"
                 android:text="Mine noter "
                 android:layout_weight="1"
-                android:textSize="30sp"
+                android:textSize="30dp"
                 android:textColor="#ff2b1655"
                 android:textStyle="bold"/>
 

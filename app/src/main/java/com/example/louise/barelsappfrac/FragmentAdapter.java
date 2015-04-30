@@ -27,7 +27,7 @@ public class FragmentAdapter extends FragmentPagerAdapter {
                 fragment = new FQA_fragment();
                 break;
             case 1:
-                fragment = new Video_fragment() ;
+                fragment = new YoutubeRssParsning() ;
                 break;
             case 2:
                 fragment = new Infomation_frag();

@@ -13,7 +13,7 @@
         <com.astuetz.PagerSlidingTabStrip
             android:id="@+id/tabs"
             android:layout_width="match_parent"
-            android:layout_height="48dip"
+            android:layout_height="48dp"
             android:layout_gravity="bottom"
             android:textColor="#ff2b1655"
             android:textStyle="bold"/>

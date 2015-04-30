@@ -6,6 +6,7 @@ import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
@@ -15,7 +16,9 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.MediaController;
 import android.widget.TextView;
 import android.widget.VideoView;
@@ -39,9 +42,15 @@ public class BenytVideoView extends Fragment implements OnClickListener {
   private TextView overskrift;
   private TextView beskrivelse;
   ImageButton imbutinfo;
+  private Handler handler;
+    private Runnable runnable;
 
   String vTitel,vBesriv, vurl, vlink;
-
+   private static final boolean AUTO_HIDE = true;
+   private static final int AUTO_HIDE_DELAY_MILLIS = 3000;
+    private static final boolean TOGGLE_ON_CLICK = true;
+    FrameLayout framelay;
+    LinearLayout lin;
   @Override
   public void onCreate(Bundle icicle) {
     super.onCreate(icicle);
@@ -59,6 +68,9 @@ public class BenytVideoView extends Fragment implements OnClickListener {
         beskrivelse = (TextView) w.findViewById(R.id.youtube_beskrivelse);
         imbutinfo = (ImageButton)w.findViewById(R.id.youtube_infoknap);
         imbutinfo.setOnClickListener(this);
+        framelay = (FrameLayout)w.findViewById(R.id.frameview);
+        lin = (LinearLayout)w.findViewById(R.id.linlayvideo);
+
         if (getArguments()!=null){
             vTitel = getArguments().getString("titel");
             vBesriv = getArguments().getString("beskrivelse");
@@ -78,15 +90,23 @@ public class BenytVideoView extends Fragment implements OnClickListener {
         videoView.requestFocus();
 
 
+        handler = new Handler();
+        handler.postDelayed(runnable, 100);
+
+         runnable = new Runnable() {
+            @Override
+            public void run() {
+                framelay.setVisibility(View.GONE);
+                     handler.postDelayed(this, 100);
+            }
+        };
+
         videoView.start();
-
-
-
-
 
         // Inflate the layout for this fragment
         return w;
     }
+
   /**
    * For at få videoen til at spille jævnt håndterer vi selv vending af skærmen
    * Se evt http://stackoverflow.com/questions/4434027/android-videoview-orientation-change-with-buffered-video
@@ -107,8 +127,15 @@ public class BenytVideoView extends Fragment implements OnClickListener {
   }
 
   public void onClick(View arg0) {
-    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(vlink));
-    startActivity(intent);
+      if(arg0 == imbutinfo){
+          Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(vlink));
+          startActivity(intent);
+      }
+      else{
+          Log.d("not","not infobutton");
+      }
+
+
   }
 
  @Override
@@ -116,5 +143,12 @@ public class BenytVideoView extends Fragment implements OnClickListener {
      super.onPause();
      videoView.stopPlayback();
  }
+
+    @Override
+    public void onDestroy(){
+        super.onDestroy();
+        getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR);
+
+    }
 
 }

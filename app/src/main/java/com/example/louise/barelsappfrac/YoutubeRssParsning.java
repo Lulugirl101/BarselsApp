@@ -93,12 +93,12 @@ public class YoutubeRssParsning extends Fragment implements OnItemClickListener 
         if (videoklip.isEmpty()) {
             klipAsyncTask.execute();
         }
-
-        listView = new ListView(getActivity());
-        listView.setAdapter(klipadapter);
+        View viewvideo = inflater.inflate(R.layout.video_fragment_layout, container, false);
+        listView = (ListView)viewvideo.findViewById(R.id.videolist);
         listView.setOnItemClickListener(this);
-        listView.setId(120); // sæt ID så tilstand blir gemt ved skærmvending
-        return listView;
+        listView.setAdapter(klipadapter);
+        //listView.setId(120); // sæt ID så tilstand blir gemt ved skærmvending
+        return viewvideo;
 
 
     }
@@ -280,11 +280,6 @@ public class YoutubeRssParsning extends Fragment implements OnItemClickListener 
               .replace(R.id.fragmentindhold1,bVv )
               .addToBackStack(null)
               .commit();
-    Intent i = new Intent(getActivity(), BenytVideoView.class);
-    i.putExtra("titel", k.titel);
-    i.putExtra("beskrivelse", k.egenskaber.get("content"));
-    i.putExtra("videourl", k.videourl);
-    i.putExtra("link", k.link);
-    startActivity(i);
+
   }
 }

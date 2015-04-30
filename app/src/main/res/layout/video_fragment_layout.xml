@@ -12,18 +12,18 @@
     <TextView android:layout_width="match_parent"
         android:layout_height="50dp"
         android:text="Videoguides "
-        android:textSize="30sp"
+        android:textSize="30dp"
         android:textColor="#ff2b1655"
         android:textStyle="bold"/>
 
+     <ListView
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:id="@+id/videolist">
 
+         </ListView>
     </LinearLayout>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Try out"
-        android:id="@+id/button"
-        android:layout_gravity="center" />
+
 
 </FrameLayout>

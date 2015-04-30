@@ -25,13 +25,15 @@ import java.util.ArrayList;
 
 
 
-public class List_notefragment extends Fragment implements AdapterView.OnItemClickListener,View.OnClickListener,AdapterView.OnItemLongClickListener {
+public class List_notefragment extends Fragment implements AdapterView.OnItemClickListener,View.OnClickListener,AdapterView.OnItemLongClickListener, Runnable {
 
     private ListView listViewNotes;
-    ArrayList<String> mynotes = new ArrayList<String>();
+    ArrayList<String> mynotes,files = new ArrayList<String>();
     private ImageButton nyNote;
     private View.OnClickListener click;
     String itemname;
+    static ArrayList<Runnable> barselsNotesObservers = new ArrayList<>();
+
     private String[] filer =  new String[0];
 
     @Override
@@ -44,24 +46,48 @@ public class List_notefragment extends Fragment implements AdapterView.OnItemCli
      public View onCreateView(LayoutInflater inflater, ViewGroup container,
                 Bundle savedInstanceState) {
 
-            Filehandler filehandler = new Filehandler(getActivity().getFilesDir().toString());
-            filer = filehandler.fileList();
-            Log.d("",filer.toString());
             View v = inflater.inflate(R.layout.listnotes_frag, container, false);
             listViewNotes = (ListView) v.findViewById(R.id.listViewnotes);
             ImageButton nyNote = (ImageButton) v.findViewById(R.id.nynote);
             nyNote.setOnClickListener(this);
-            ArrayAdapter adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, android.R.id.text1, filer);
 
             // Inflate the layout for this fragment
             listViewNotes.setOnItemClickListener(this);
             listViewNotes.setOnItemLongClickListener(this);
-            listViewNotes.setAdapter(adapter);
+        barselsNotesObservers.add(this);
+        ArrayAdapter adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, android.R.id.text1, files);
+        listViewNotes.setAdapter(adapter);
+            run();
 
             Log.d("Notes", "Liste oprettes");
             return v;
 
         }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        barselsNotesObservers.remove(this);
+    }
+
+    @Override
+    public void run() {
+        updatelist();
+    }
+
+    public void updatelist(){//Todo find bedre løsning virker ikke.
+        Log.d("List","Update list");
+        Filehandler filehandler = new Filehandler(getActivity().getFilesDir().toString());
+        filer =filehandler.fileList();
+        files.clear();
+        for(int i = 0; i< filer.length; i++)
+        {
+            files.add(filer[i]);
+        }
+
+        Log.d("",filer.toString());
+        ((ArrayAdapter) listViewNotes.getAdapter()).notifyDataSetChanged();
+    }
 
 
     @Override
@@ -121,15 +147,6 @@ public class List_notefragment extends Fragment implements AdapterView.OnItemCli
         return true;
     }
 
-    public void updatelist(){//Todo find bedre løsning virker ikke.
-        Log.d("List","Update list");
-        filer = new String[0];
-        Log.d("",filer.toString());
-        Filehandler filehandler = new Filehandler(getActivity().getFilesDir().toString());
-        filer = filehandler.fileList();
-        Log.d("",filer.toString());
-        ((ArrayAdapter) listViewNotes.getAdapter()).notifyDataSetChanged();
-    }
 
     public void deleteNote(String itemn){
         Log.d("Notes","Deleting notes");
