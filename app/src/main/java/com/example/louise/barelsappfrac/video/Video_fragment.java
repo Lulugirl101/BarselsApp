@@ -1,4 +1,4 @@
-package com.example.louise.barelsappfrac;
+package com.example.louise.barelsappfrac.video;
 
 import android.app.FragmentTransaction;
 import android.support.v4.app.Fragment;

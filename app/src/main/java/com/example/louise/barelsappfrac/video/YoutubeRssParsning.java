@@ -1,7 +1,6 @@
-package com.example.louise.barelsappfrac;
+package com.example.louise.barelsappfrac.video;
 
 import android.app.FragmentTransaction;
-import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;

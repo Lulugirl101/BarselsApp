@@ -1,11 +1,9 @@
-package com.example.louise.barelsappfrac;
+package com.example.louise.barelsappfrac.notes;
 
 import android.app.FragmentTransaction;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.ListFragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,10 +15,6 @@ import android.widget.Toast;
 
 import com.example.louise.barselsapp.R;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
 import java.util.ArrayList;
 
 

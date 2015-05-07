@@ -1,4 +1,4 @@
-package com.example.louise.barelsappfrac;
+package com.example.louise.barelsappfrac.video;
 
 import android.app.Activity;
 import android.content.Intent;

@@ -1,4 +1,4 @@
-package com.example.louise.barelsappfrac;
+package com.example.louise.barelsappfrac.chat;
 
 import android.support.v4.app.Fragment;
 import android.os.Bundle;

@@ -1,4 +1,4 @@
-package com.example.louise.barelsappfrac;
+package com.example.louise.barelsappfrac.info;
 
 import android.support.v4.app.Fragment;
 import android.os.Bundle;

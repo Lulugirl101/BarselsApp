@@ -1,4 +1,4 @@
-package com.example.louise.barelsappfrac;
+package com.example.louise.barelsappfrac.FAQ;
 
 
 import android.app.Dialog;
