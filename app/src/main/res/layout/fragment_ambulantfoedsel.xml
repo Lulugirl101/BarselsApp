@@ -1,0 +1,60 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.louise.barelsappfrac.info.Ambulantfoedsel">
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ambulant fødsel"
+            android:textSize="30dp"
+            android:textColor="#ff2b1655"
+            android:textStyle="bold"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:src="@drawable/ambulantehead"
+            android:scaleType="centerInside"/>
+        <TextView android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/ambulant0"
+            android:paddingBottom="5dp"
+            android:textSize="15dp"
+            android:textColor="#ff2b1655"/>
+        <TextView android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/ambulant1"
+            android:textSize="20dp"
+            android:textColor="#ff2b1655"
+            android:textStyle="bold"/>
+        <TextView android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/efterfød_1"
+            android:paddingBottom="5dp"
+            android:textSize="15dp"
+            android:textColor="#ff2b1655"/>
+        <TextView android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ambulant fødsel"
+            android:textSize="20dp"
+            android:textColor="#ff2b1655"
+            android:textStyle="bold"/>
+        <TextView android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/ambulant2"
+            android:paddingBottom="5dp"
+            android:textSize="15dp"
+            android:textColor="#ff2b1655"/>
+
+
+    </LinearLayout>
+</ScrollView>
+
+</FrameLayout>

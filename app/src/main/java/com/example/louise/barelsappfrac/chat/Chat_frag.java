@@ -31,7 +31,7 @@ import com.example.louise.barselsapp.R;
         View web = inflater.inflate(R.layout.char_frag_layout,container,false);
         WebView wv = (WebView) web.findViewById(R.id.webViewchat);
         wv.setWebViewClient(new WebViewClient());
-        wv.loadUrl("http://javabog.dk");
+        wv.loadUrl(getActivity().getString(R.string.javabog));
 
         // Inflate the layout for this fragment
         return web;

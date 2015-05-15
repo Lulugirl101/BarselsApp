@@ -90,6 +90,7 @@ public class YoutubeRssParsning extends Fragment implements OnItemClickListener 
         // Burde nok bruge SD-kortet, men det kan forsvinde midt i det hele
         FilCache.init(getActivity().getCacheDir());
         if (videoklip.isEmpty()) {
+            //klipAsyncTask = new ParseKlipAsyncTask();
             klipAsyncTask.execute();
         }
         View viewvideo = inflater.inflate(R.layout.video_fragment_layout, container, false);

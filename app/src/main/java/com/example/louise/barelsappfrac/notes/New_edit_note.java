@@ -24,9 +24,9 @@ import java.util.ArrayList;
  */
 public class New_edit_note extends DialogFragment {
 
-    private Button addnote, mynotes;
+
     private EditText note_editor, titel_editor;
-    private TextView shownotes, fragtitel;
+    private TextView fragtitel;
     private ArrayList<String> notes = new ArrayList<String>();
     String ititel, inote;
     Filehandler fileH;
@@ -87,7 +87,7 @@ public class New_edit_note extends DialogFragment {
                 .setNegativeButton("Cancel",
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int whichButton) {
-                                Toast.makeText(getActivity(), "Canel", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getActivity(), "Cancel", Toast.LENGTH_SHORT).show();
                                 dialog.cancel();
                             }
                         }

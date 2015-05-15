@@ -32,7 +32,88 @@
     <string name="title_activity_fullscreen">FullscreenActivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
-
-
+    <string name="javabog">http://javabog.dk</string>
+    <string name="ernæring">Det er perfekt ernæring til jeres barn.\n</string>
+    <string name="ernæring1">Der er tæt kontakt mellem mor og barn.\n</string>
+    <string name="ernæring4">Det optimerer barnets fysiske og mentale udvikling.</string>
+    <string name="amning">Barn skal virke veltilpas mellem amningerne.\n</string>
+    <string name="ernæring3">Amning har en forebyggende virkning i forhold til fx infektionssygdomme, mave-tarmsygdomme og mellemørebetændelse.\n</string>
+    <string name="ernæring2">Det er praktisk og nemt.\n</string>
+    <string name="amning1">Afføringen skal være blød og gullig (børn skal have afføring hver dag den første måned, de kan godt have det flere gange om dagen).\n</string>
+    <string name="amning2">Bleerne skal være våde.\n</string>
+    <string name="amning3">Barnet skal være interesseret i kontakt, når det er vågent.\n</string>
+    <string name="amning4">Barnet bør få mindst seks måltider i døgnet.\n</string>
+    <string name="amning5">Nogle børn kan spise sig mætte i løbet af 20 min. mens andre har brug for længere tid.\n</string>
+    <string name="amning6">I timerne efter barnet har suttet første gang, kan det godt være træt og sove mange timer. Vil barnet i dagene efter fødslen igen sove i lang tid, bør barnet vækkes efter ca. 3-4 timer og tilbyde mad.\n</string>
+    <string name="amning7">Får barnet ikke det det har brug for kan det skyldes at barnet bliver lagt til for sjælden eller ikke sutter tilstrækkelig længe ved det enkelte bryst, til at få den fede mælk. Desuden er det vigtigt at barnet har rigtigt fat om brystet. \n</string>
+    <string name="amning8">​Gode råd til mor:\n</string>
+    <string name="amning9">Vær forberedt på at amme mange gange dagligt.\n</string>
+    <string name="amning10">Lad være med at give barnet sut før amningen er etableret.\n</string>
+    <string name="amning11">Hvil dig så meget som muligt.\n</string>
+    <string name="amning12">Husk at spise og drikke.\n</string>
+    <string name="amning13">Tilbyd brystet så ofte som muligt og lad barnet sutte længe.</string>
+    <string name="parat">Barnet er parat til at tage brystet med munden på vid gab. Når barnet har fået godt fat, er underlæben krænget godt ud og ligger et godt stykke inde på brystet. Undertiden kan tungen ses i mundvigen. Det kan gøre ondt i starten af amningen, men efter nogle minutter skal amningen ikke være forbundet med stærke smerter.</string>
+    <string name="tegn">Det kan være et tegn på, at barnet får for lidt af den fede mælk. Vær opmærksom på, at barnet sutter det første bryst blødt, inden det andet bryst tilbydes. Det er almindeligt, at barnet nogle gange i døgnet - ofte sidst på dagen - gerne vil ammes hyppigt. Nogle spædbørn vil gerne sutte igen kort tid efter amningen. Typisk er det kun 5-10 min., hvorefter barnet falder i søvn</string>
+    <string name="synkelyde">Når barnet kommer med tydelige synkelyde efter at have suttet i kort tid.\n</string>
+    <string name="synkelyde1">Når barnet har 6-8 våde bleer dagligt. \n</string>
+    <string name="synkelyde2">Når afføringen ændrer sig fra at være tykt og mørkegrøn til at være gul og grynet</string>
+    <string name="godt_fat">Sørg for at barnet har godt fat om brystet.\n</string>
+    <string name="godt_fat1">Barnet skal ligge lige mod brystet så det ikke trækker i brystvorten.\n</string>
+    <string name="godt_fat2">Er brysterne ømme, så start med det mindst ømme bryst og flyt barnet til det mest ømme bryst, når mælken løber.\n</string>
+    <string name="godt_fat3">Har jeres barn svært ved at få fat, kan det hjælpe at ”starte forfra”. Dvs. at lægge barnet hud mod hud på mors mave/bryst i mange timer og lade barnet få tid og ro til at finde vej til brystet igen.\n</string>
+    <string name="godt_fat4">Få mælken til at løbe før du lægger barnet til brystet.\n</string>
+    <string name="godt_fat5">Prøv med en anden ammestilling.\n</string>
+    <string name="godt_fat6">Bryd vacuumet mellem brystvorten og barnets mund, inden vorten tages ud af barnets mund.\n</string>
+    <string name="godt_fat7">Lad vorterne lufttørre, evt. med lidt modermælk på.\n</string>
+    <string name="godt_fat8">Brug BH og undgå, at tøj irriterer brystvorterne.\n</string>
+    <string name="godt_fat9">Undgå ammeindlæg der klæber til huden. Brug helst uldne ammeindlæg.\n</string>
+    <string name="godt_fat10">Der er ingen dokumentation for at brug af cremer kan hjælpe.\n</string>
+    <string name="godt_fat11">Vær opmærksom på, at der kan være svamp i brystvorten, hvis brystvorten er blank og rødmende. Svamp kræver behandling.</string>
+    <string name="betændelse">Brystbetændelse opstår, hvis mælken hober sig op i et område af brystet. Det føles ofte som en knude og området omkring bliver spændt og rødt.\n</string>
+    <string name="betændelse1">Symptomerne er influenzalignende med ømhed i hele kroppen – feber kan ligeledes forekomme.</string>
+    <string name="tøj">Undgå tøj der strammer omkring brystet.\n</string>
+    <string name="tøj1">Undgå at trykke hårdt på brystet i forbindelse med amning.\n</string>
+    <string name="tøj2">Skift jævnligt ammestilling, så alle områder i brystet tømmes.\n</string>
+    <string name="tøj3">Undgå kulde.\n</string>
+    <string name="tøj4">Det kan være nødvendigt at behandle brystbetændelse med antibiotika.\n</string>
+    <string name="tøj5">Kontakt den praktiserende læge, din sundhedsplejerske eller barselsafdelingen, hvis du tror du har fået brystbetændelse.</string>
+    <string name="sår">Hvis der er kommet store sår på brystvorterne, kan det lindre at bruge en suttebrik til sårene er helede.\n</string>
+    <string name="sår2">Hvis brystvorterne er flade eller indadvendte, og barnet ikke kan få fat.</string>
+    <string name="revne">Hvis brysterne er meget spændte, og barnet ikke kan få fat.\n</string>
+    <string name="revne1">Hvis vorterne er meget ømme pga. revner eller sår.\n</string>
+    <string name="revne2">For at stimulere og øge mængden af mælk.\n</string>
+    <string name="revne3">Hvis barnet er for svagt til at sutte på brystet.\n</string>
+    <string name="revne4">Hvis mor og barn er adskilt i en periode.​</string>
+    <string name="ammeløb">Når amningen fungerer godt, mælken er løbet til, og barnet tager på i vægt, kan I godt tilbyde barnet en sut. I dagene indtil mælken er løbet til, er det almindeligt at barnet sutter hyppigt og længe. Efter mælken er løbet til, kan barnets ønske om ofte at ligge ved brystet, være et udtryk for at behovet for at sutte er stort. Her kan man evt. give barnet en sut.</string>
+    <string name="hjælp_kontakt">De første 7 døgn efter fødslen kan I henvende jer i et af barselambulatorierne mandag–søndag kl. 8.30-14.30. Sundhedsplejersken kontakter jer, når I er kommet hjem og aftaler besøg. Ved behov kan I tage kontakt til hende.\n</string>
+    <string name="hjælp_kontakt1"><![CDATA[Forældre & Fødsel tilbyder telefonisk vejledning i amning.]]></string>
+    <string name="efterfød_0">Vi har forskellige tilbud til jer efter fødslen alt efter, hvordan fødslen er gået, hvordan mor og barn har det, og om du er førstegangsfødende eller flergangsfødende.</string>
+    <string name="efterfød_1">Hvis du er førstegangsfødende, tilbyder vi dig at blive indlagt på en af vores forældrestuer på barselgangen sammen med din partner.\n
+       I kan også blive indlagt på barselgangen, hvis du er fler-gangsfødende og har haft en kompliceret graviditet eller fødsel.\n
+        \nDet kan for eksempel være, hvis:\n
+        • Du har født ved akut eller planlagt kejsersnit \n
+        • Du har født for tidligt (før 37 graviditetsuger) \n
+        • Du eller jeres nyfødte barn kræver ekstra observation\n
+        • Du tidligere har haft amme problemer eller er bryst- opereret\n
+        • Du har født tvillinger • du har haft graviditetssukkersyge eller svangerskabsfor-giftning\n
+        • Der opstår komplikationer under fødslen, fx hvis du bløder mere end normalt\n\n
+        Ved andre komplikationer tager vi individuelt stilling til, om du kan føde ambulant, eller om du skal tilbydes barselsophold.\n
+        Som udgangspunkt varer et barselsophold to døgn. Hvis der er behov for yderligere indlæggelse, planlægger vi det videre forløb sammen med jer.</string>
+    <string name="efterfød_2">Hvis du er flergangsfødende og har haft en normal graviditet og fødsel, kan du forvente at føde ambulant.</string>
+    <string name="barselgang0">Telefonnummer til barselgangen: 48 29 73 05</string>
+    <string name="barselgang1">Du finder barselgangen G0142/G1543 ved at gå ind ad hovedindgangen, indgang 01. Tag elevatoren eller trapperne til plan 4</string>
+    <string name="barselgang2">Til indlagte mødre: Udover tre faste måltider tilbyder vi te, kaffe, kage og brød til indlagte mødre. Det finder du i køk-kenet.\nTil indlagte fædre: Du kan få morgenmad på afdelingen. Ønsker du at spise middagsmåltid og/eller aftensmåltid på barselgangen, skal du bestille og betale det i kiosken i forhallen.\nMaden vil blive leveret med madvognen på barselgangen med dit navn på. Der er en pjece med information om priser og bestilling.</string>
+    <string name="barselgang3">Mor bedes medbringe toiletsager og tøj. Når man lige har født, er det rart at komme hurtigt i sit eget tøj igen. Med-bring derfor komfortabelt tøj, hvor det er nemt at komme til at amme. Husk en ammebh.\n Far bedes medbringe toiletsager, et badehåndklæde og almindeligt tøj. Af hygiejniske årsager bedes I medbringe indendørs fodtøj. Det er ikke godt at have snavsede fødder i sengen, når man lige har født.\n Det nyfødte barn: Til jeres barn skal I medbringe babydyne og tøj til brug på barselgangen og hjemturen. Tag rigeligt med, der går noget til de første dage. Bind, bleer samt øvrigt pusleudstyr er til rådighed på bar-selgangen</string>
+    <string name="barselgang4">Da alle nyder at have et hyggeligt og rart miljø under opholdet, forventer vi, at man rydder op efter sig selv og sine gæster i løbet af dagen, og inden man tager hjem. Brugt service stilles i vognene og brugte vaser/gamle blomster stilles i skyllerummet.\n Den nybagte far bedes tage betrækket af dyne og pude og lægge det til vask, inden I tager hjem.</string>
+    <string name="barselgang5">Far og søskende har fri besøgstid. For andre er besøgstiden kl. 15-16 og kl. 19-20. Da det er vigtigt at få hvilet efter fødslen, beder vi om, at besøgstiderne bliver overholdt og at der vises hensyn til medpatienterne.</string>
+    <string name="barselgang6">Mobiltelefoner må gerne benyttes i afdelingen, under hen-syntagen til de andre familier, men skal være slukkede i hviletiden 12.30 -14.30 og om natten.</string>
+    <string name="barselgang7">Får I brug for hjælp, efter I er kommet hjem, kan I kontakte os på vores Hotline. Her kan I få telefonisk hjælp fra en sygeplejerske hele døgnet, indtil I har haft kontakt til sundhedsplejersken. Det vil primært dreje sig om spørgsmål vedrørende amning og spædbarnspleje.\nDen første uge kan du også henvende dig med problemer/spørgsmål med relation til din fødsel, derefter skal du gå til din egen læge.\nEr der brug for det, får I en tid til en ambulant kontrol i Bar-selsambulatoriet. Når I får en sundhedsplejerske tilknyttet, er det herefter hende, I skal kontakte.\nVed tegn på brystbetændelse må I kontakte os hele am-meperioden.\n\nHotline er åben hele døgnet. Ved mindre akutte problemer gerne i tidsrummet 8-15\nBarselsambulatoriet er åbent på hverdage kl. 8-15 og ligger på barselsafsnit G0142.\n</string>
+    <string name="barselgang8">På vores hjemmeside www.nordsjaellandshospital.dk/baby kan I læse mere om barselgangen. I kan også se en lille film, hvor I bliver vist rundt på barselgangen.\n\nPå www.trygmedbarn.dk kan du også se små videofilm om den første tid efter fødslen. Her kan du også se film fra Nordsjællands hospitals barselgang.</string>
+    <string name="barselgang9">På barselgangen har vi 17 forældrestuer/enestuer, hvor både mor, far og det nyfødte barn kan være sammen.\n\nNår I ankommer til afdelingen, bliver I modtaget af en sygeplejerske, som vil tale med jer om indlæggelsen.\n\nVi vil gerne høre jeres forventninger til opholdet, så vi i samarbejde med jer kan planlægge jeres forløb på barselgangen.\n\nSygeplejersken vil observere, at mor og barn har det godt efter fødslen, og vil vise jer rundt på afdelingen.\n\nPå barselgangen har I som familie mulighed for at lære jeres barn at kende i trygge omgivelser.\n\nAlt efter hvilke behov I har, vil vi tilbyde jer information, støtte og vejledning, så I bliver trygge ved den nye familiesituation.\n\nFørste gang, du skal på toilettet, anbefaler vi at du ringe efter din sygeplejerske. Vi anbefaler også, at I ringer efter sygeplejersken, første gang I skal pusle jeres barn.</string>
+    <string name="barselgang10">Når I vælger at tage hjem, skal I aftale med jeres sygeple-jerske, hvornår på formiddagen det bliver, af hensyn til planlægning af jeres udskrivelse. Sygeplejersken vil runde forløbet af med jer og sikre, at I har fået de relevante informationer. Hun vil i samarbejde med jer drøfte jeres barns trivsel og hvad i særligt skal være opmærksomme på.\nHun vil lave en sidste opfølgning på din fysiske tilstand og på om amningen er etableret.\nHvis forløbet efter fødslen har været normalt, vil du ikke blive undersøgt eller automatisk komme til at tale med en læge inden udskrivelsen.\nDet forventes som udgangspunkt, at I selv sørger for hjem-transport efter udskrivelsen.\nInden I går hjem, vil I blive tilbudt en gennemgang af fødslen med en jordemoder. Det er en god idé, at I begge er med til denne samtale, da I kan have forskellige opfattelser af, hvad der er sket under fødslen, og I kan supplere hinanden med spørgsmål.</string>
+    <string name="barselgang11">Barselsgangen\nHotline\n48 29 73 06</string>
+    <string name="ambulant0">Hvis du har født før, og du har haft en ukompliceret graviditet og fødsel, kan du forvente at føde ambulant.\n\nAt føde ambulant vil sige, at I kan blive på fødestuen 4-6 timer efter fødslen, hvorefter I tager hjem. Inden udskrivelsen vil en jordemoder give jer al relevant information, så I føler jer trygge.\n\nDet forventes som udgangspunkt, at I selv sørger for hjem-transport efter fødslen.\n\nHvis du føder ambulant, følger vi op på fødslen og barnets trivsel, efter at I er kommet hjem. Det betyder, at I:\n\n• vil blive ringet op af en jordemoder dagen efter fødslen, der sikrer sig, at både mor og barn har det godt.\n• bliver tilbudt besøg af en jordemoder på 2. eller 3. da-gen efter fødslen.\n• kan kontakte vores Hotline, hvis I har spørgsmål eller bekymringer.</string>
+    <string name="ambulant1">Hjemmebesøg på 2. eller 3.dagen.</string>
+    <string name="ambulant2">Inden I tager hjem fra fødegangen, aftaler vi en dag, hvor en jordemoder vil besøge jer derhjemme.\nJordemoderen vil ved besøget sikre sig, at mor og barn har det godt. Hun vil i samarbejde med jer drøfte jeres barns trivsel, og hvad I særligt skal være opmærksomme på.\nHun vil lave en opfølgning på din fysiske tilstand efter fødslen og på om amningen er etableret.\nHun gennemgår fødslen med jer, og I har mulighed for at stille spørgsmål.I forbindelse med besøget tages også hælblodprøve (PKU) på barnet</string>
 
 </resources>

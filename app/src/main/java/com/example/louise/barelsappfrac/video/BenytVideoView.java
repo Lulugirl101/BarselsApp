@@ -147,6 +147,12 @@ public class BenytVideoView extends Fragment implements OnClickListener {
  }
 
     @Override
+    public void onDetach() {
+        super.onDetach();
+        getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR);
+    }
+
+    @Override
     public void onDestroy(){
         super.onDestroy();
         getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR);

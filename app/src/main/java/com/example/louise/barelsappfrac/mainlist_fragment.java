@@ -38,8 +38,8 @@ public class mainlist_fragment extends Fragment implements AdapterView.OnItemCli
         // Inflate the layout for this fragment
         //Sætter listview op
         Log.d("","Inside list fragmetent");
-        String[] muligheder = {"FAQ", "Video Guides", "Informationer", "Chat", "Noter"};
-         final String[] beskrivelser = {"Spørgsmål og svar", "Video guides og information videor", "Nytig information delt ved emner", "Snak med en af vores læger", "Lav dine egne noter"};
+        String[] muligheder = {"FAQ", "Video Guides", "Mit forløb: Barsel", "Chat", "Noter"};
+         final String[] beskrivelser = {"Spørgsmål og svar", "Video guides og information videor", "Nytig information delt ved emner fra mit forløb mappen", "Snak med en af vores læger", "Lav dine egne noter"};
         ArrayAdapter adapter = new ArrayAdapter(getActivity(), R.layout.listeelement, R.id.listeelem_overskrift, muligheder) {
             //udvider listview
             @Override
@@ -110,7 +110,7 @@ public class mainlist_fragment extends Fragment implements AdapterView.OnItemCli
                     .replace(R.id.fragmentindhold1,f )
                     .addToBackStack(null)
                     .commit();
-            Log.d("Click","Opening Videoguides");
+            Log.d("Click","Opening Videoguide");
         }
         else if (position == 2){
             //Informations fragment.

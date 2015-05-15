@@ -1,0 +1,71 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.louise.barelsappfrac.notes.fragment_notes"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#ffe9d7f4">
+
+        <TextView android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Ny note "
+            android:textSize="35sp"
+            android:textColor="#ff2b1655"
+            android:id="@+id/fragtitel"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Titel:"
+            android:textSize="25dp"
+            android:autoText="false"
+            android:id="@+id/titel" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:textSize="20dp"
+            android:gravity="top"
+            android:background="#ffd9beff"
+
+            android:inputType="textCapSentences"
+            android:id="@+id/titeleditor"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Note:"
+            android:textSize="25dp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:inputType="textCapSentences"
+            android:gravity="top"
+            android:textSize="20dp"
+            android:lines="60"
+            android:imeOptions="actionDone"
+            android:id="@+id/noteediter"
+            android:selectAllOnFocus="false"
+            android:background="#ffd9beff" />
+        <!--<Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add"
+            android:id="@+id/addnotebut"
+            android:textColor="#ff2b1655"
+            /> -->
+
+
+
+
+    </LinearLayout>
+
+
+
+</FrameLayout>

@@ -34,7 +34,7 @@ public class Splash extends Activity implements Runnable {
     @Override
     public void run() {
         Log.d("Appen bliver startet","");
-        startActivity(new Intent(this, MainActivity_Start.class));
+        startActivity(new Intent(this, Chat.class));
         aktivitetDerVisesNu.finish();  // <2> Luk velkomsaktiviteten
         aktivitetDerVisesNu = null;
     }

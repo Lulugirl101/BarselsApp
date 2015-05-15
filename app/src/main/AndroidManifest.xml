@@ -12,10 +12,6 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".MainActivity_Start"
-            android:label="@string/app_name" >
-        </activity>
-        <activity
             android:name="com.example.louise.barelsappfrac.Startactivity"
             android:label="Barsels App" >
             <intent-filter>
@@ -23,18 +19,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity
-            android:name=".FAQ"
-            android:label="@string/title_activity_faq" >
-        </activity>
-        <activity
-            android:name=".Videoguides"
-            android:label="@string/title_activity_videoguides" >
-        </activity>
-        <activity
-            android:name=".Information"
-            android:label="@string/title_activity_information" >
         </activity>
         <activity
             android:name=".Chat"
