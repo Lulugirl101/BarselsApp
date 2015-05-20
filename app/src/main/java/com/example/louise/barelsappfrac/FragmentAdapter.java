@@ -8,7 +8,8 @@ import android.support.v4.app.FragmentPagerAdapter;
 import com.example.louise.barelsappfrac.FAQ.FQA_fragment;
 import com.example.louise.barelsappfrac.chat.Chat_frag;
 import com.example.louise.barelsappfrac.info.Infomation_frag;
-import com.example.louise.barelsappfrac.video.YoutubeRssParsning;
+import com.example.louise.barelsappfrac.video.Video_fragment;
+import com.example.louise.barelsappfrac.video.old_viewer.YoutubeRssParsning;
 
 public class FragmentAdapter extends FragmentPagerAdapter {
     private Fragment[] fragmenter = new Fragment[7];
@@ -32,7 +33,7 @@ public class FragmentAdapter extends FragmentPagerAdapter {
                 fragment = new FQA_fragment();
                 break;
             case 1:
-                fragment = new YoutubeRssParsning() ;
+                fragment = new Video_fragment();
                 break;
             case 2:
                 fragment = new Infomation_frag();

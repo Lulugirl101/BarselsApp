@@ -1,7 +1,6 @@
 package com.example.louise.barelsappfrac.info;
 
 import android.app.FragmentTransaction;
-import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,17 +9,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.example.louise.barelsappfrac.FragmentActivityman;
 import com.example.louise.barselsapp.R;
 
-import java.util.ArrayList;
-
 // Infomation framgent, der skal indeholde det udleverede marteriale. lige pt pdf.
-//TODO: Find måde at implementere , det udleverede Hospital marteriale.
+//TODO: Find måde at implementere fra backend , det udleverede Hospital marteriale.
 
 public class Infomation_frag extends Fragment implements View.OnClickListener {
 
-    ImageView efterfød,barselgang,ambulant, goderåd,ernæring_barn;
+    ImageView efterfød,barselgang,ambulant, kvinde_krop,barnetstrivsel,ernæring_barn,amning,udmalk;
 
 
     @Override
@@ -37,14 +33,21 @@ public class Infomation_frag extends Fragment implements View.OnClickListener {
         efterfød = (ImageView)table.findViewById(R.id.efterfødsels);
         barselgang=(ImageView)table.findViewById(R.id.barselgang);
         ambulant = (ImageView)table.findViewById(R.id.ambulant);
-        goderåd = (ImageView)table.findViewById(R.id.goderaod);
+        kvinde_krop = (ImageView)table.findViewById(R.id.krop);
+        barnetstrivsel = (ImageView)table.findViewById(R.id.b_trivsel);
         ernæring_barn=(ImageView)table.findViewById(R.id.ernæring);
+        amning=(ImageView)table.findViewById(R.id.amning);
+        udmalk=(ImageView)table.findViewById(R.id.udmalk);
+
 
         efterfød.setOnClickListener(this);
         barselgang.setOnClickListener(this);
         ambulant.setOnClickListener(this);
-        goderåd.setOnClickListener(this);
+        kvinde_krop.setOnClickListener(this);
         ernæring_barn.setOnClickListener(this);
+        barnetstrivsel.setOnClickListener(this);
+        amning.setOnClickListener(this);
+        udmalk.setOnClickListener(this);
 
         return table;
 
@@ -94,7 +97,7 @@ public class Infomation_frag extends Fragment implements View.OnClickListener {
            Log.d("Click","Opening Ambulant");
 
        }
-       else if(v == goderåd){
+       else if(v == kvinde_krop){
            Bundle args = new Bundle();
            args.putInt("Pos",3);
            Infopageviewer i = new Infopageviewer();
@@ -105,12 +108,54 @@ public class Infomation_frag extends Fragment implements View.OnClickListener {
                    .replace(R.id.fragmentindhold1,i )
                    .addToBackStack(null)
                    .commit();
-           Log.d("Click","Opening goderåd");
+           Log.d("Click","Opening kvinde_krop");
+
+       }
+       else if(v == barnetstrivsel){
+           Bundle args = new Bundle();
+           args.putInt("Pos",4);
+           Infopageviewer i = new Infopageviewer();
+           i.setArguments(args);
+           //fragment_activityman_lay.setArguments(args);
+           getFragmentManager().beginTransaction()
+                   .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                   .replace(R.id.fragmentindhold1,i )
+                   .addToBackStack(null)
+                   .commit();
+           Log.d("Click","Opening FAQ");
 
        }
        else if(v == ernæring_barn){
            Bundle args = new Bundle();
-           args.putInt("Pos",4);
+           args.putInt("Pos",5);
+           Infopageviewer i = new Infopageviewer();
+           i.setArguments(args);
+           //fragment_activityman_lay.setArguments(args);
+           getFragmentManager().beginTransaction()
+                   .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                   .replace(R.id.fragmentindhold1,i )
+                   .addToBackStack(null)
+                   .commit();
+           Log.d("Click","Opening FAQ");
+
+       }
+       else if(v == amning ){
+           Bundle args = new Bundle();
+           args.putInt("Pos",6);
+           Infopageviewer i = new Infopageviewer();
+           i.setArguments(args);
+           //fragment_activityman_lay.setArguments(args);
+           getFragmentManager().beginTransaction()
+                   .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                   .replace(R.id.fragmentindhold1,i )
+                   .addToBackStack(null)
+                   .commit();
+           Log.d("Click","Opening FAQ");
+
+       }
+       else if(v ==udmalk ){
+           Bundle args = new Bundle();
+           args.putInt("Pos",7);
            Infopageviewer i = new Infopageviewer();
            i.setArguments(args);
            //fragment_activityman_lay.setArguments(args);

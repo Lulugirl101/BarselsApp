@@ -1,0 +1,158 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.louise.barelsappfrac.info.Amning">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Amning"
+                android:textSize="50dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:textColor="#ff2b1655"
+                android:textStyle="bold"/>
+            <TextView android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hvad du bør vide amning"
+                android:textSize="30dp"
+                android:textColor="#ff2b1655"
+                android:textStyle="bold"/>
+            <TextView android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/amning0"
+                android:paddingBottom="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:textSize="20dp"
+                android:textColor="#ff2b1655"/>
+            <TextView android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Amning på fødestuen"
+            android:textSize="30dp"
+            android:textColor="#ff2b1655"
+            android:textStyle="bold"/>
+            <TextView android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/amning_1"
+                android:paddingBottom="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:textSize="20dp"
+                android:textColor="#ff2b1655"/>
+            <TextView android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fri adgang til brystet"
+            android:textSize="30dp"
+            android:textColor="#ff2b1655"
+            android:textStyle="bold"/>
+            <TextView android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/amning_2"
+                android:paddingBottom="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:textSize="20dp"
+                android:textColor="#ff2b1655"/>
+            <TextView android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Råmælk/modermælk"
+                android:textSize="30dp"
+                android:textColor="#ff2b1655"
+                android:textStyle="bold"/>
+            <TextView android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/amning_3"
+                android:paddingBottom="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:textSize="20dp"
+                android:textColor="#ff2b1655"/>
+            <TextView android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ammestilling"
+                android:textSize="30dp"
+                android:textColor="#ff2b1655"
+                android:textStyle="bold"/>
+            <TextView android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/amning_4"
+                android:paddingBottom="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:textSize="20dp"
+                android:textColor="#ff2b1655"/>
+            <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/ammeteknik"
+            android:scaleType="centerInside"/>
+            <TextView android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/amning_5"
+                android:paddingBottom="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:textSize="20dp"
+                android:textColor="#ff2b1655"/>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:src="@drawable/ammeteknik_1"
+                android:scaleType="centerInside"/>
+            <TextView android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/amning_7"
+                android:paddingBottom="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:textSize="20dp"
+                android:textColor="#ff2b1655"/>
+            <TextView android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/amning_8"
+                android:paddingBottom="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:textSize="20dp"
+                android:textColor="#ff2b1655"/>
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="1900dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:id="@+id/amning_list">
+            </ListView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/spørgsmål"
+                    android:layout_weight="1"
+                    android:textSize="20dp"
+                    android:textColor="#ff2b1655"
+                    android:textStyle="bold"/>
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:scaleType="fitCenter"
+                    android:layout_marginRight="5dp"
+                    android:src="@drawable/chat_info"
+                    android:layout_gravity="right"
+                    android:id="@+id/nychat"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>

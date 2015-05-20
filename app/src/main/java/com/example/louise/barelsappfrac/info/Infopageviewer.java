@@ -56,6 +56,15 @@ public class Infopageviewer extends Fragment {
         else  if (acknr.equals(4)){
             infoPager.setCurrentItem(4);
         }
+        else  if (acknr.equals(5)){
+            infoPager.setCurrentItem(5);
+        }
+        else  if (acknr.equals(6)){
+            infoPager.setCurrentItem(6);
+        }
+        else  if (acknr.equals(7)){
+            infoPager.setCurrentItem(7);
+        }
         return  rod;
 
 

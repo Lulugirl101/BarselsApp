@@ -3,18 +3,51 @@
     android:layout_height="match_parent"
     tools:context="com.example.louise.barelsappfrac.info.Gode_rod">
 
+   <ScrollView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <TextView android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:text="Gode råd og vejledning "
+            android:layout_height="wrap_content"
+            android:text="Gode råd og vejledning"
             android:textSize="30dp"
             android:textColor="#ff2b1655"
             android:textStyle="bold"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:src="@drawable/vejledning"
+            android:scaleType="centerInside"/>
+        <TextView android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/gode_rod_2"
+            android:paddingBottom="5dp"
+            android:paddingRight="5dp"
+            android:textSize="15dp"
+            android:gravity="center"
+            android:paddingLeft="5dp"
+            android:textColor="#ff2b1655"/>
+        <TextView android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Kvindens krop"
+            android:textSize="25dp"
+            android:paddingLeft="5dp"
+            android:textColor="#ff2b1655"
+            android:textStyle="bold"/>
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="850dp"
+            android:paddingLeft="5dp"
+            android:id="@+id/kroplist">
+        </ListView>
+
 
     </LinearLayout>
+
+</ScrollView>
 
 </FrameLayout>

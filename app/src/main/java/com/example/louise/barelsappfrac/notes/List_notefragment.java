@@ -70,7 +70,7 @@ public class List_notefragment extends Fragment implements AdapterView.OnItemCli
         updatelist();
     }
 
-    public void updatelist(){//Todo find bedre løsning virker ikke.
+    public void updatelist(){
         Log.d("List","Update list");
         Filehandler filehandler = new Filehandler(getActivity().getFilesDir().toString());
         filer =filehandler.fileList();

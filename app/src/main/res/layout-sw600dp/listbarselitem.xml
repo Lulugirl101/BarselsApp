@@ -15,6 +15,9 @@
         android:text="texxt input"
         android:id="@+id/barselitemtext"
         android:paddingBottom="5dp"
+        android:autoLink="all"
+        android:linksClickable="true"
+        android:textColorLink="#0066CC"
         android:textSize="20dp"
         android:textColor="#ff2b1655"/>
 </LinearLayout>

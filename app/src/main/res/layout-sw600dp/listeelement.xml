@@ -25,7 +25,7 @@
 
     <TextView
             android:id="@+id/listeelem_overskrift"
-            android:textSize="40dp"
+            android:textSize="30dp"
             android:text="overskrift"
             android:textColor="#ff2b1655"
             android:textStyle="bold"
@@ -39,7 +39,7 @@
 -->
         <TextView
                 android:id="@+id/listeelem_beskrivelse"
-                android:textSize="30dp"
+                android:textSize="20dp"
                 android:text="beskrivelse"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>

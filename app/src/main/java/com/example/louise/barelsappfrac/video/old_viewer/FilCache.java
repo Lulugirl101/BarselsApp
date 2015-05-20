@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.example.louise.barelsappfrac.video;
+package com.example.louise.barelsappfrac.video.old_viewer;
 
 import android.os.SystemClock;
 import android.util.Log;

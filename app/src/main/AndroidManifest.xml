@@ -24,11 +24,10 @@
             android:name=".Chat"
             android:label="@string/title_activity_chat" >
         </activity>
+
         <activity
-            android:name="com.example.louise.barelsappfrac.FullscreenActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="@string/title_activity_fullscreen"
-            android:theme="@style/FullscreenTheme" >
+            android:name="com.example.louise.barelsappfrac.video.youtubeplayer"
+            android:label="@string/title_activity_youtubeplayer" >
         </activity>
     </application>
 

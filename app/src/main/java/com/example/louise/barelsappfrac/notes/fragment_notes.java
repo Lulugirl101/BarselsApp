@@ -19,7 +19,7 @@ import java.util.ArrayList;
 
 
 // Note fragment, hvor brugeren skal være istand til at tage noter, gemme og editere i dem.
-// TODO: make file format for note
+
 
 public class fragment_notes extends Fragment implements View.OnClickListener {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -102,7 +102,7 @@ public class fragment_notes extends Fragment implements View.OnClickListener {
         }
         if (v == mynotes){
             Log.d("Notes","Showing my notes");
-            //TODO: Make updatelist with right files drievtry and data
+
             getFragmentManager().beginTransaction()
                     .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
                     .replace(R.id.fragmentholder, new List_notefragment())

@@ -11,10 +11,6 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-
-
-
-
     <TextView android:layout_width="match_parent"
         android:layout_height="50dp"
         android:text="Mit Forløb: Barsel"
@@ -65,12 +61,12 @@
                  android:layout_height="130dp"
                  android:layout_weight="1"
                  android:id="@+id/ambulant"/>
-             <ImageView android:src="@drawable/gode_rod"
+             <ImageView android:src="@drawable/krop"
                  android:layout_width="0dp"
                  android:layout_height="130dp"
                  android:layout_weight="1"
                  android:scaleType="fitCenter"
-                 android:id="@+id/goderaod"
+                 android:id="@+id/krop"
                  />
          </TableRow>
            <TableRow>
@@ -83,7 +79,7 @@
                    android:textSize="20dp"
                    />
                <TextView android:id="@+id/goderåd"
-                   android:text="Gode råd og Vejledning"
+                   android:text="Kvindens krop"
                    android:layout_width="0dp"
                    android:layout_height="wrap_content"
                    android:layout_weight="1"
@@ -91,25 +87,78 @@
                    android:textSize="20dp"/>
            </TableRow>
            <TableRow>
+               <ImageView android:src="@drawable/gode_rod"
+                   android:layout_weight="1"
+                   android:layout_width="0dp"
+                   android:id="@+id/b_trivsel"
+                   android:layout_height="130dp"
+                   android:scaleType="centerInside"
+                   />
                <ImageView android:src="@drawable/ernaering"
-                   android:layout_gravity="center"
+                   android:layout_weight="1"
+                   android:layout_width="0dp"
                    android:id="@+id/ernæring"
-                   android:layout_height="150dp"
-                   android:scaleType="center"
-                   android:layout_width="wrap_content"/>
+                   android:layout_height="130dp"
+                   android:scaleType="centerInside"
+                   />
            </TableRow>
            <TableRow>
                <TextView
-                   android:layout_width="match_parent"
+                   android:layout_width="0dp"
                    android:layout_height="wrap_content"
                    android:textSize="20dp"
                    android:id="@+id/ernæringbarn"
                    android:textColor="#ff2b1655"
+                   android:layout_weight="1"
+                   android:text="Barnets trivsel"
+                   />
+               <TextView android:id="@+id/gode_rodtext"
                    android:text="Ernæring af jeres barn"
-                   android:gravity="center"/>
+                   android:layout_width="0dp"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"
+                   android:textColor="#ff2b1655"
+                   android:textSize="20dp"
+                   />
+           </TableRow>
+           <TableRow>
+               <ImageView android:src="@drawable/amning"
+                   android:layout_weight="1"
+                   android:layout_width="0dp"
+                   android:id="@+id/amning"
+                   android:layout_height="130dp"
+                   android:scaleType="fitCenter"
+                   />
+               <ImageView android:src="@drawable/udmalk"
+                   android:layout_weight="1"
+                   android:layout_width="0dp"
+                   android:id="@+id/udmalk"
+                   android:layout_height="130dp"
+                   android:scaleType="fitXY"
+                   />
+           </TableRow>
+           <TableRow>
+               <TextView
+                   android:layout_width="0dp"
+                   android:layout_height="wrap_content"
+                   android:textSize="20dp"
+                   android:id="@+id/amningtext"
+                   android:textColor="#ff2b1655"
+                   android:layout_weight="1"
+                   android:text="Amning"
+                   />
+               <TextView android:id="@+id/udmalk_text"
+                   android:text="Udpumpning"
+                   android:layout_width="0dp"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"
+                   android:textColor="#ff2b1655"
+                   android:textSize="20dp"
+                   />
            </TableRow>
 
-           </TableLayout>
+
+       </TableLayout>
     </LinearLayout>
 
     </ScrollView>

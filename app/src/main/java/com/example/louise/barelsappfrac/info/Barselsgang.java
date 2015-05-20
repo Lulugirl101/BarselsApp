@@ -1,8 +1,11 @@
 package com.example.louise.barelsappfrac.info;
 
+import android.app.FragmentTransaction;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,12 +16,13 @@ import android.widget.ListView;
 import android.widget.Switch;
 import android.widget.TextView;
 
+import com.example.louise.barelsappfrac.FragmentActivityman;
 import com.example.louise.barselsapp.R;
 
 
-public class Barselsgang extends Fragment {
+public class Barselsgang extends Fragment implements View.OnClickListener {
 
-
+    ImageView chat;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -107,9 +111,27 @@ public class Barselsgang extends Fragment {
         ListView listView = (ListView)rod.findViewById(R.id.barselganglist);
         listView.setDividerHeight(0);
         listView.setAdapter(adapter);
+        chat = (ImageView)rod.findViewById(R.id.nychat);
+        chat.setOnClickListener(this);
        return rod;
     }
 
 
+    @Override
+    public void onClick(View v) {
+        FragmentManager fm = getActivity().getSupportFragmentManager();
+        for (int i = 0; i < fm.getBackStackEntryCount(); ++i) {
+            fm.popBackStack();}
+        Bundle args = new Bundle();
+        args.putInt("Pos", 3);
+        FragmentActivityman f = new FragmentActivityman();
+        f.setArguments(args);
+        getFragmentManager().beginTransaction()
+                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                .replace(R.id.fragmentindhold1, f)
+                .addToBackStack(null)
+                .commit();
+        Log.d("Click", "Opening Chat");
+    }
 
 }

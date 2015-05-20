@@ -1,66 +1,53 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.louise.barelsappfrac.info.Efterfodsel">
-<ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    tools:context="com.example.louise.barelsappfrac.info.Gode_rod">
 
-
+   <ScrollView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <TextView android:layout_width="match_parent"
-            android:paddingLeft="5dp"
             android:layout_height="wrap_content"
-            android:text="Efter fødslen"
+            android:text="Gode råd og vejledning"
             android:textSize="50dp"
             android:textColor="#ff2b1655"
             android:textStyle="bold"/>
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="200dp"
-           android:src="@drawable/efterfodsel"
+            android:src="@drawable/vejledning"
             android:scaleType="centerInside"/>
         <TextView android:layout_width="match_parent"
-            android:paddingLeft="5dp"
             android:layout_height="wrap_content"
-            android:text="@string/efterfød_0"
+            android:text="@string/gode_rod_2"
             android:paddingBottom="5dp"
+            android:paddingRight="5dp"
             android:textSize="20dp"
             android:gravity="center"
+            android:paddingLeft="5dp"
             android:textColor="#ff2b1655"/>
         <TextView android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Barselophold"
+            android:text="Kvindens krop"
+            android:textSize="35dp"
             android:paddingLeft="5dp"
-            android:textSize="30dp"
             android:textColor="#ff2b1655"
             android:textStyle="bold"/>
-        <TextView android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/efterfød_1"
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="850dp"
             android:paddingLeft="5dp"
-            android:paddingBottom="5dp"
-            android:textSize="20dp"
-            android:textColor="#ff2b1655"/>
-        <TextView android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Ambulant fødsel"
-            android:paddingLeft="5dp"
-            android:textSize="30dp"
-            android:textColor="#ff2b1655"
-            android:textStyle="bold"/>
-        <TextView android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/efterfød_2"
-            android:paddingLeft="5dp"
-            android:paddingBottom="5dp"
-            android:textSize="20dp"
-            android:textColor="#ff2b1655"/>
+            android:id="@+id/kroplist">
+        </ListView>
+
 
     </LinearLayout>
+
 </ScrollView>
+
 </FrameLayout>
