@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.louise.barselsapp"
-        minSdkVersion 8
+        minSdkVersion 14
         targetSdkVersion 21
         versionCode 1
         versionName "1.0"
@@ -25,4 +25,5 @@ dependencies {
     compile 'com.astuetz:pagerslidingtabstrip:1.0.1'
     compile 'com.android.support:support-v4:22.0.0'
     compile files('libs/YouTubeAndroidPlayerApi.jar')
+    compile files('libs/quickblox-android-sdk-chat-2.2.3.jar')
 }

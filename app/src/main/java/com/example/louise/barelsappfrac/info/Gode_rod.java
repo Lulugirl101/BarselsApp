@@ -11,6 +11,10 @@ import android.widget.TextView;
 
 import com.example.louise.barselsapp.R;
 
+/*
+* Info: Gode råd om kvindens krop.
+* Kilde : Mit barsels forløb, af Nordsjællands Hospital, Gynækologisk-Obstetrisk afdeling, Region Hovedstaden
+* */
 
 public class Gode_rod extends Fragment {
 
@@ -24,7 +28,6 @@ public class Gode_rod extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_gode_rod, container, false);
         String[] overskrifter = {"Blødning:","Tråde:","I form efter fødslen:"};
         ArrayAdapter adapter = new ArrayAdapter(getActivity(), R.layout.listbarselitem, R.id.barselheaditem,overskrifter) {

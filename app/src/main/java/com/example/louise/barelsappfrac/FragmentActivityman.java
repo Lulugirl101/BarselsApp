@@ -2,9 +2,7 @@ package com.example.louise.barelsappfrac;
 
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
-import android.support.v4.view.PagerTitleStrip;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,7 +26,6 @@ public class FragmentActivityman extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater i, ViewGroup container,Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         //Implemnts the fragment adapter og sætter de rigtige fragmenter fra efter forige aktivitet.
         View rod = i.inflate(R.layout.fragment_activityman_lay, container, false);
 

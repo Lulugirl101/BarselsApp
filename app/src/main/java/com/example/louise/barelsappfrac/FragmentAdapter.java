@@ -8,8 +8,9 @@ import android.support.v4.app.FragmentPagerAdapter;
 import com.example.louise.barelsappfrac.FAQ.FQA_fragment;
 import com.example.louise.barelsappfrac.chat.Chat_frag;
 import com.example.louise.barelsappfrac.info.Infomation_frag;
+import com.example.louise.barelsappfrac.notes.List_notefragment;
 import com.example.louise.barelsappfrac.video.Video_fragment;
-import com.example.louise.barelsappfrac.video.old_viewer.YoutubeRssParsning;
+
 
 public class FragmentAdapter extends FragmentPagerAdapter {
     private Fragment[] fragmenter = new Fragment[7];
@@ -42,7 +43,7 @@ public class FragmentAdapter extends FragmentPagerAdapter {
                 fragment = new Chat_frag();
                 break;
             case 4:
-                fragment = new Placeholder_frag();
+                fragment = new List_notefragment();
                 break;
         }
         fragmenter[position] = fragment;

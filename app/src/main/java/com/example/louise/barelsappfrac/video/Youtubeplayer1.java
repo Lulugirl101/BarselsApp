@@ -7,7 +7,6 @@ import com.example.louise.barselsapp.R;
 import com.google.android.youtube.player.YouTubeBaseActivity;
 
 import android.widget.Toast;
-        import com.google.android.youtube.player.YouTubeBaseActivity;
         import com.google.android.youtube.player.YouTubeInitializationResult;
         import com.google.android.youtube.player.YouTubePlayer;
         import com.google.android.youtube.player.YouTubePlayer.ErrorReason;
@@ -18,20 +17,21 @@ import android.widget.Toast;
 
 /*
 * sources for Youtube API:
-* http://javatechig.com/android/youtubeplayerview-example-in-android-using-youtube-api
-* https://developers.google.com/youtube/android/player/downloads/
-* https://developers.google.com/youtube/registering_an_application
-* https://developers.google.com/youtube/android/player/reference/com/google/android/youtube/player/YouTubePlayerFragment
-*https://developers.google.com/youtube/android/player/reference/com/google/android/youtube/player/YouTubePlayerSupportFragment
-* http://stackoverflow.com/questions/12214467/how-to-obtain-signing-certificate-fingerprint-sha1-for-oauth-2-0-on-android
+* Tutorial :        http://javatechig.com/android/youtubeplayerview-example-in-android-using-youtube-api
+* API download :    https://developers.google.com/youtube/android/player/downloads/
+* Google devolpers: https://developers.google.com/youtube/android/player/reference/com/google/android/youtube/player/YouTubePlayer
+*                   https://developers.google.com/youtube/registering_an_application
+*                   https://developers.google.com/youtube/android/player/reference/com/google/android/youtube/player/YouTubePlayerFragment
+*                   https://developers.google.com/youtube/android/player/reference/com/google/android/youtube/player/YouTubePlayerSupportFragment
+*  finding SHA1:    http://stackoverflow.com/questions/12214467/how-to-obtain-signing-certificate-fingerprint-sha1-for-oauth-2-0-on-android
 * */
 
-public class youtubeplayer extends YouTubeBaseActivity implements YouTubePlayer.OnInitializedListener {
+public class Youtubeplayer1 extends YouTubeBaseActivity implements YouTubePlayer.OnInitializedListener {
 
-    public static final String API_KEY = "AIzaSyCFUsYwse3E8XkLOeP5uikR_Ah1Y2uOngg";
+    public static final String API_KEY = "AIzaSyCFUsYwse3E8XkLOeP5uikR_Ah1Y2uOngg"; //Ket optaind ind devolpers guide
 
     //http://youtu.be/<VIDEO_ID>
-    String videoID ="bk1F55TxHm0" ;
+    String videoID ;
 
 
     @Override
@@ -40,7 +40,7 @@ public class youtubeplayer extends YouTubeBaseActivity implements YouTubePlayer.
 
         /** attaching layout xml **/
         setContentView(R.layout.activity_youtubeplayer);
-        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE); //Set orientation to landscape
         Bundle extras = getIntent().getExtras();
 
         if (extras != null) {
@@ -66,7 +66,7 @@ public class youtubeplayer extends YouTubeBaseActivity implements YouTubePlayer.
         /** add listeners to YouTubePlayer instance **/
         player.setPlayerStateChangeListener(playerStateChangeListener);
         player.setPlaybackEventListener(playbackEventListener);
-        player.setFullscreen(true);
+        player.setFullscreen(true); //Set videomode to fulscreen
         player.play();
         /** Start buffering **/
         if (!wasRestored) {
@@ -130,7 +130,7 @@ public class youtubeplayer extends YouTubeBaseActivity implements YouTubePlayer.
 
 
     @Override
-    public void onDestroy(){
+    public void onDestroy(){ //Når activiteten er færdig, set orientering til at følge telefonens sensor.
         super.onDestroy();
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR);
 

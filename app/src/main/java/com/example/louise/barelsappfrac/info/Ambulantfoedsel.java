@@ -1,8 +1,7 @@
 package com.example.louise.barelsappfrac.info;
 
-import android.app.Activity;
+
 import android.app.FragmentTransaction;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -14,6 +13,11 @@ import android.widget.ImageView;
 
 import com.example.louise.barelsappfrac.FragmentActivityman;
 import com.example.louise.barselsapp.R;
+
+/*
+* Info omkring Ambualnt fødsel.
+* Kilde : Mit barsels forløb, af Nordsjællands Hospital, Gynækologisk-Obstetrisk afdeling, Region Hovedstaden
+* */
 
 
 public class Ambulantfoedsel extends Fragment implements View.OnClickListener {
@@ -27,10 +31,9 @@ public class Ambulantfoedsel extends Fragment implements View.OnClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_ambulantfoedsel, container, false);
         chat = (ImageView)v.findViewById(R.id.nychat);
-        chat.setOnClickListener(this);
+        chat.setOnClickListener(this); //Mulighed for at åbnechat
         return v;
     }
 
@@ -39,7 +42,7 @@ public class Ambulantfoedsel extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
         FragmentManager fm = getActivity().getSupportFragmentManager();
         for (int i = 0; i < fm.getBackStackEntryCount(); ++i) {
-            fm.popBackStack();}
+            fm.popBackStack();} //Ryder back stack, så vi ikke bygger en stack af page viewers op
             Bundle args = new Bundle();
             args.putInt("Pos", 3);
             FragmentActivityman f = new FragmentActivityman();

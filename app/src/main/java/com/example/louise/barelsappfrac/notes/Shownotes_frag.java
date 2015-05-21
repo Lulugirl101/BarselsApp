@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.support.v4.app.Fragment;
 
-import com.example.louise.barelsappfrac.notes.Filehandler;
 import com.example.louise.barselsapp.R;
 
 
@@ -26,6 +25,7 @@ public class Shownotes_frag extends Fragment {
     @Override
     public View onCreateView(LayoutInflater i, ViewGroup container,
                              Bundle savedInstanceState) {
+        Log.d("Shownotes_frag","in use");
         View rod = i.inflate(R.layout.shownotes_frag_layout, container, false);
         titelshow = (TextView)rod.findViewById(R.id.titelShow);
         noteshow = (TextView)rod.findViewById(R.id.noteShow);

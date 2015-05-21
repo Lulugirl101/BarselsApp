@@ -1,16 +1,18 @@
 package com.example.louise.barelsappfrac;
 
-import android.app.Activity;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v4.app.FragmentActivity;
 import android.util.Log;
+
 import android.widget.ImageView;
 
 import com.example.louise.barselsapp.R;
 
 
-public class Splash1 extends Activity implements Runnable {
+public class Splash1 extends FragmentActivity implements Runnable {
     Handler handler = new Handler();
     static Splash1 aktivitetDerVisesNu = null;
     //Spash aktivitet. TODO: Implementer til sidst.

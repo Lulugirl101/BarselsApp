@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 import com.example.louise.barselsapp.R;
 
-// Frequentlt asked questions. Skal indeholde en liste med mest stillede spørgsmål
+// Frequentlt asked questions. Skal indeholde en liste med mest stillede spørgsmål. Kilde taget fra Rishospitalets hjemmeside.
 // Source : http://stackoverflow.com/questions/24083886/expandablelistview-in-fragment-issue
 // Datasource: https://www.rigshospitalet.dk/afdelinger-og-klinikker/julianemarie/obstetrisk-klinik/efter-foedslen-barsel/amning/Sider/ofte-stillede-spoergsmaal--faq.aspx#hvorforamme
 
@@ -32,7 +32,7 @@ public class FQA_fragment extends Fragment {
         super.onCreate(savedInstanceState);
         Resources res = getResources();
         groups = res.getStringArray(R.array.fagtitels);
-       // groups = new String[]{R.string.faq1, "Test Header 2", "Test Header 3", "Test Header 4"};
+
 
         children = new String[][]{  //Todo: make backend med alt dette text
                 {getActivity().getString(R.string.ernæring) +
@@ -103,8 +103,7 @@ public class FQA_fragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_fqa_fragment, container, false);
+           return inflater.inflate(R.layout.fragment_fqa_fragment, container, false);
     }
 
 

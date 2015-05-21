@@ -1,7 +1,6 @@
 package com.example.louise.barelsappfrac.info;
 
-import android.app.Activity;
-import android.net.Uri;
+
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -13,6 +12,11 @@ import android.widget.TextView;
 
 import com.example.louise.barselsapp.R;
 
+
+/*
+* Info omkring  Barnets trivsel.
+* Kilde : Mit barsels forløb, af Nordsjællands Hospital, Gynækologisk-Obstetrisk afdeling, Region Hovedstaden
+* */
 
 public class Barnets_trvisel extends Fragment {
 

@@ -1,7 +1,6 @@
 package com.example.louise.barelsappfrac.info;
 
-import android.app.Activity;
-import android.net.Uri;
+
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
@@ -10,8 +9,11 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.astuetz.PagerSlidingTabStrip;
-import com.example.louise.barelsappfrac.FragmentAdapter;
 import com.example.louise.barselsapp.R;
+
+/*
+* Pageviwer der pliver kaldt fra infromation_frag.Sætter pageviewe og tabs.
+* */
 
 
 public class Infopageviewer extends Fragment {
@@ -39,7 +41,7 @@ public class Infopageviewer extends Fragment {
         PagerSlidingTabStrip tabs = (PagerSlidingTabStrip) rod.findViewById(R.id.infotabs);
         tabs.setViewPager(infoPager);
 
-        Integer acknr = getArguments().getInt("Pos");
+        Integer acknr = getArguments().getInt("Pos"); //Sætter current item, ved hjælp af arguments
 
         if (acknr.equals(0)) {
             infoPager.setCurrentItem(0);

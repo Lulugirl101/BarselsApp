@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import com.example.louise.barselsapp.R;
 
 // Infomation framgent, der skal indeholde det udleverede marteriale. lige pt pdf.
+// Giver oversigt over de forskellgie emner, og åbner en ny viewpager med de forskellgie emner.
 //TODO: Find måde at implementere fra backend , det udleverede Hospital marteriale.
 
 public class Infomation_frag extends Fragment implements View.OnClickListener {
@@ -55,12 +56,13 @@ public class Infomation_frag extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
+       //Åbner ny pageviewer gafhænning af det valgte Imageview.
+
        if (v == efterfød){
            Bundle args = new Bundle();
            args.putInt("Pos",0);
            Infopageviewer i = new Infopageviewer();
            i.setArguments(args);
-           //fragment_activityman_lay.setArguments(args);
            getFragmentManager().beginTransaction()
                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
                    .replace(R.id.fragmentindhold1,i )
@@ -74,7 +76,6 @@ public class Infomation_frag extends Fragment implements View.OnClickListener {
            args.putInt("Pos",1);
            Infopageviewer i = new Infopageviewer();
            i.setArguments(args);
-           //fragment_activityman_lay.setArguments(args);
            getFragmentManager().beginTransaction()
                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
                    .replace(R.id.fragmentindhold1,i )
@@ -88,7 +89,6 @@ public class Infomation_frag extends Fragment implements View.OnClickListener {
            args.putInt("Pos",2);
            Infopageviewer i = new Infopageviewer();
            i.setArguments(args);
-           //fragment_activityman_lay.setArguments(args);
            getFragmentManager().beginTransaction()
                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
                    .replace(R.id.fragmentindhold1,i )
@@ -102,7 +102,6 @@ public class Infomation_frag extends Fragment implements View.OnClickListener {
            args.putInt("Pos",3);
            Infopageviewer i = new Infopageviewer();
            i.setArguments(args);
-           //fragment_activityman_lay.setArguments(args);
            getFragmentManager().beginTransaction()
                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
                    .replace(R.id.fragmentindhold1,i )
@@ -116,7 +115,6 @@ public class Infomation_frag extends Fragment implements View.OnClickListener {
            args.putInt("Pos",4);
            Infopageviewer i = new Infopageviewer();
            i.setArguments(args);
-           //fragment_activityman_lay.setArguments(args);
            getFragmentManager().beginTransaction()
                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
                    .replace(R.id.fragmentindhold1,i )
@@ -130,7 +128,6 @@ public class Infomation_frag extends Fragment implements View.OnClickListener {
            args.putInt("Pos",5);
            Infopageviewer i = new Infopageviewer();
            i.setArguments(args);
-           //fragment_activityman_lay.setArguments(args);
            getFragmentManager().beginTransaction()
                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
                    .replace(R.id.fragmentindhold1,i )
@@ -144,7 +141,6 @@ public class Infomation_frag extends Fragment implements View.OnClickListener {
            args.putInt("Pos",6);
            Infopageviewer i = new Infopageviewer();
            i.setArguments(args);
-           //fragment_activityman_lay.setArguments(args);
            getFragmentManager().beginTransaction()
                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
                    .replace(R.id.fragmentindhold1,i )
@@ -158,7 +154,6 @@ public class Infomation_frag extends Fragment implements View.OnClickListener {
            args.putInt("Pos",7);
            Infopageviewer i = new Infopageviewer();
            i.setArguments(args);
-           //fragment_activityman_lay.setArguments(args);
            getFragmentManager().beginTransaction()
                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
                    .replace(R.id.fragmentindhold1,i )

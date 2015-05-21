@@ -18,16 +18,15 @@ import com.example.louise.barselsapp.R;
 
 import java.util.ArrayList;
 
-
+/*
+*  List med ens egne noter.
+* */
 
 public class List_notefragment extends Fragment implements AdapterView.OnItemClickListener,View.OnClickListener,AdapterView.OnItemLongClickListener, Runnable {
 
     private ListView listViewNotes;
-    ArrayList<String> mynotes,files = new ArrayList<String>();
-    private ImageButton nyNote;
-    private View.OnClickListener click;
-    String itemname;
-    static ArrayList<Runnable> barselsNotesObservers = new ArrayList<>();
+    ArrayList<String> files = new ArrayList<String>();
+    static ArrayList<Runnable> barselsNotesObservers = new ArrayList<>(); //set runable
 
     private String[] filer =  new String[0];
 
@@ -40,19 +39,19 @@ public class List_notefragment extends Fragment implements AdapterView.OnItemCli
     @Override
      public View onCreateView(LayoutInflater inflater, ViewGroup container,
                 Bundle savedInstanceState) {
-
-            View v = inflater.inflate(R.layout.listnotes_frag, container, false);
+        Log.d("List_notefragment","in use");
+        View v = inflater.inflate(R.layout.listnotes_frag, container, false);
             listViewNotes = (ListView) v.findViewById(R.id.listViewnotes);
-            ImageButton nyNote = (ImageButton) v.findViewById(R.id.nynote);
+            ImageButton nyNote = (ImageButton) v.findViewById(R.id.nynote); //laver ny note
             nyNote.setOnClickListener(this);
 
             // Inflate the layout for this fragment
             listViewNotes.setOnItemClickListener(this);
             listViewNotes.setOnItemLongClickListener(this);
-        barselsNotesObservers.add(this);
-        ArrayAdapter adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, android.R.id.text1, files);
-        listViewNotes.setAdapter(adapter);
-            run();
+            barselsNotesObservers.add(this);        //adds observer
+            ArrayAdapter adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, android.R.id.text1, files);
+            listViewNotes.setAdapter(adapter);
+            run(); //updater list med noter
 
             Log.d("Notes", "Liste oprettes");
             return v;
@@ -60,7 +59,7 @@ public class List_notefragment extends Fragment implements AdapterView.OnItemCli
         }
 
     @Override
-    public void onDestroyView() {
+    public void onDestroyView() { //fjerner observeren igen
         super.onDestroyView();
         barselsNotesObservers.remove(this);
     }
@@ -70,7 +69,7 @@ public class List_notefragment extends Fragment implements AdapterView.OnItemCli
         updatelist();
     }
 
-    public void updatelist(){
+    public void updatelist(){ //Henter listen fra filhandleren og til føljer til den arraylist der bruges af adapteren
         Log.d("List","Update list");
         Filehandler filehandler = new Filehandler(getActivity().getFilesDir().toString());
         filer =filehandler.fileList();
@@ -86,21 +85,12 @@ public class List_notefragment extends Fragment implements AdapterView.OnItemCli
 
 
     @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) { //viser noten, med Show_note dialog
         String notename = ((TextView)view.findViewById(android.R.id.text1)).getText().toString();
         Log.d("Item",notename);
         Show_note sn = Show_note.newInstance(
                 notename);
         sn.show(getFragmentManager(), "dialog");
-        /*Bundle args = new Bundle();
-        args.putString("TitelFile",notename);
-        Shownotes_frag d = new Shownotes_frag();
-        d.setArguments(args);
-        getFragmentManager().beginTransaction()
-                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-                .replace(R.id.fragmentholder,d)
-                .addToBackStack(null)
-                .commit();*/
         Log.d("Fragment","fragment replacing");
 
 
@@ -115,7 +105,7 @@ public class List_notefragment extends Fragment implements AdapterView.OnItemCli
     }
 
     @Override
-    public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+    public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) { //Slet eller dit din note ved longclick
        Log.d("Click", "Long click detected");
         final String listtext = ((TextView)view.findViewById(android.R.id.text1)).getText().toString();
         Log.d("Item",listtext);
@@ -135,15 +125,11 @@ public class List_notefragment extends Fragment implements AdapterView.OnItemCli
         });
         dialog.show();
 
-       // showPopup(getView(), listtext);
-       // mynotes.remove(position);
-        //((ArrayAdapter) listViewNotes.getAdapter()).notifyDataSetChanged();
-        //Toast.makeText(getActivity(), "Removed the country" + position, Toast.LENGTH_SHORT).show();
-        return true;
+            return true;
     }
 
 
-    public void deleteNote(String itemn){
+    public void deleteNote(String itemn){ //Slet fil
         Log.d("Notes","Deleting notes");
         Filehandler fileH = new Filehandler(getActivity().getFilesDir().toString());
         fileH.deletefile(itemn);
@@ -152,55 +138,19 @@ public class List_notefragment extends Fragment implements AdapterView.OnItemCli
 
     }
 
-    public void editNote(String itmtit)
+    public void editNote(String itmtit) //Edit fil
     {
         Log.d("Notes","Edit note called");
          New_edit_note new_edit = New_edit_note.newInstance(
                 itmtit);
         new_edit.show(getFragmentManager(), "dialog");
-       /* Bundle args = new Bundle();
-        args.putString("TitelFile",itmtit);
-        fragment_notes d = new fragment_notes();
-        d.setArguments(args);
-        getFragmentManager().beginTransaction()
-                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-                .replace(R.id.fragmentholder,d)
-                .addToBackStack(null)
-                .commit();*/
         Log.d("Fragment","fragment replacing");
     }
 
-       //POPUP menu to delete an edit in notes TODO: fix visual errors
- /*   private void showPopup(final View v, final String itemtit){
-        Log.d("Menu","Show popups");
-        PopupMenu popm = new PopupMenu(getActivity(),v);
-        popm.getMenuInflater().inflate(R.menu.popupnotes,popm.getMenu());
 
-        popm.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-
-            @Override
-            public boolean onMenuItemClick(MenuItem item) {
-                switch (item.getItemId()){
-                    case R.id.menu1:
-                        Log.d("Items","Edit note selcedted");
-                        editNote(itemtit);
-                        Toast.makeText(getActivity(),"Edit "+ item.toString(),Toast.LENGTH_SHORT).show();
-                        return true;
-                    case R.id.menu2:
-                        Log.d("Items","Remove note selected");
-                        deleteNote(itemtit);
-                        Toast.makeText(getActivity(), "Removing note"+ itemtit, Toast.LENGTH_SHORT).show();
-                        return true;
-                    default:
-                        return true;
-                }
-            }
-        });
-        popm.show();
-    }*/
 
     @Override
-    public void onResume() {
+    public void onResume() { //Datasæt ændret
         super.onResume();
         Log.d("Notes","Notelist resume");
         ((ArrayAdapter) listViewNotes.getAdapter()).notifyDataSetChanged();

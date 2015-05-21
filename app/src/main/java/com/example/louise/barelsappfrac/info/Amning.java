@@ -1,8 +1,7 @@
 package com.example.louise.barelsappfrac.info;
 
-import android.app.Activity;
+
 import android.app.FragmentTransaction;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -18,6 +17,11 @@ import android.widget.TextView;
 import com.example.louise.barelsappfrac.FragmentActivityman;
 import com.example.louise.barselsapp.R;
 
+
+/*
+* Info omkring Amning.
+* Kilde : Mit barsels forløb, af Nordsjællands Hospital, Gynækologisk-Obstetrisk afdeling, Region Hovedstaden
+* */
 
 public class Amning extends Fragment implements View.OnClickListener{
     ImageView chat;
@@ -71,7 +75,8 @@ public class Amning extends Fragment implements View.OnClickListener{
         listViewamning.setDividerHeight(0);
         listViewamning.setAdapter(adapter);
         chat = (ImageView)am.findViewById(R.id.nychat);
-        chat.setOnClickListener(this);
+        chat.setOnClickListener(this);//Mulighed for at åbne chat.
+        //Chaten bliver åbnet i en ny page viwer, mens den gamle bliver fjernet fra stakken
         return am;
     }
 
@@ -80,7 +85,7 @@ public class Amning extends Fragment implements View.OnClickListener{
     public void onClick(View v) {
         FragmentManager fm = getActivity().getSupportFragmentManager();
         for (int i = 0; i < fm.getBackStackEntryCount(); ++i) {
-            fm.popBackStack();}
+            fm.popBackStack();} //Ryder back stack, så vi ikke bygger en stack af page viewers op
         Bundle args = new Bundle();
         args.putInt("Pos", 3);
         FragmentActivityman f = new FragmentActivityman();

@@ -13,12 +13,15 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.Switch;
 import android.widget.TextView;
 
 import com.example.louise.barelsappfrac.FragmentActivityman;
 import com.example.louise.barselsapp.R;
 
+/*
+* Info omkring Barselgangen op Barselopholdet.
+* Kilde : Mit barsels forløb, af Nordsjællands Hospital, Gynækologisk-Obstetrisk afdeling, Region Hovedstaden
+* */
 
 public class Barselsgang extends Fragment implements View.OnClickListener {
 
@@ -112,7 +115,7 @@ public class Barselsgang extends Fragment implements View.OnClickListener {
         listView.setDividerHeight(0);
         listView.setAdapter(adapter);
         chat = (ImageView)rod.findViewById(R.id.nychat);
-        chat.setOnClickListener(this);
+        chat.setOnClickListener(this); //Mulighed for at åbne chat
        return rod;
     }
 
@@ -121,7 +124,7 @@ public class Barselsgang extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
         FragmentManager fm = getActivity().getSupportFragmentManager();
         for (int i = 0; i < fm.getBackStackEntryCount(); ++i) {
-            fm.popBackStack();}
+            fm.popBackStack();}//Ryder back stack, så vi ikke bygger en stack af page viewers op
         Bundle args = new Bundle();
         args.putInt("Pos", 3);
         FragmentActivityman f = new FragmentActivityman();

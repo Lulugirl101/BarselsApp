@@ -13,13 +13,13 @@ import java.util.Arrays;
 /**
  * Created by Louise on 01-04-2015.
  * source : http://www.learn2crack.com/2014/04/android-read-write-file.html
+ * Kontroller håndertering af filer. Hent, gem og opret.
  */
 public class Filehandler {
 
-    String dirpath;
     File mappe;
 
-    public Filehandler(String dir) {
+    public Filehandler(String dir) { //Laver en mappe på enheden hvor ens noter bliver lagt ned i.
             mappe = new File(dir,"BarselsNotes");
             mappe.mkdirs();
             Log.d("Filepath", Arrays.toString(mappe.list()));
@@ -27,26 +27,27 @@ public class Filehandler {
     }
 
     public String[] fileList(){
-            return mappe.list();
-    }
+        return mappe.list();
+    } //retuenre en lite med de filer der ligger i mappen
 
-    public void deletefile(String filename){
+    public void deletefile(String filename){ //Sletter filen i mappen
         String fpath = filename;
         File file = new File(mappe,fpath);
         file.delete();
         Log.d("Filehanlder","Delete fiele");
+
     }
 
     public File getMappe() {
         return mappe;
-    }
+    } //Henter mappen med notefiler
 
-    public Boolean write(String fname, String fcontent){
+    public Boolean write(String fname, String fcontent){ //Opretter og gemmer noten. bruges også ved edit note
         try {
             String fpath =fname;
             Log.d("Filepath",fpath);
             File file = new File(mappe,fpath);
-
+            Log.d("Filehanlder","writting file");
             // If file does not exists, then create it
             FileWriter fw = new FileWriter(file);
             BufferedWriter bw = new BufferedWriter(fw);
@@ -60,8 +61,8 @@ public class Filehandler {
             return false;
         }
     }
-    public String read(String fname){
-        Log.d("file","Reading file");
+    public String read(String fname){ //Retunere filen med dens inhold
+        Log.d("Filehanlder","Reading file");
         BufferedReader br = null;
         String response = null;
         try {

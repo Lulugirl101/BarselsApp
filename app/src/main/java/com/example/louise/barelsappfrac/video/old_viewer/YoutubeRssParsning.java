@@ -65,6 +65,8 @@ class Klip {
  * http://stackoverflow.com/questions/5162088/video-view-not-playing-youtube-video
  *
  * @author Jacob Nordfalk
+ * modifier: louise janoe
+ * * currently not in use
  */
 public class YoutubeRssParsning extends Fragment implements OnItemClickListener {
 

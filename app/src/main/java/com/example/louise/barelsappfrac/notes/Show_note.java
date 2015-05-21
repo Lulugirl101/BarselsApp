@@ -14,6 +14,7 @@ import com.example.louise.barselsapp.R;
 
 /**
  * Created by Louise on 24-04-2015.
+ * Viser noten som at dialog fragment
  */
 public class Show_note extends DialogFragment {
     TextView titelshow,noteshow;
@@ -36,7 +37,7 @@ public class Show_note extends DialogFragment {
     public View onCreateView(LayoutInflater i, ViewGroup container,
                              Bundle savedInstanceState) {
         Dialog dialog = getDialog();
-
+        Log.d("Show_note","in use");
 
         if (dialog != null) { // Hvis fragmentet bruges som dialog, så sæt titlen
             dialog.setCancelable(true);

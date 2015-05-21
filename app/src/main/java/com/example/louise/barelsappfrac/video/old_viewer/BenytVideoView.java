@@ -1,6 +1,6 @@
 package com.example.louise.barelsappfrac.video.old_viewer;
 
-import android.app.Activity;
+
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
@@ -8,14 +8,12 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
+
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
@@ -23,7 +21,6 @@ import android.widget.MediaController;
 import android.widget.TextView;
 import android.widget.VideoView;
 
-//import dk.nordfalk.android.elementer.R;
 
 import com.example.louise.barselsapp.R;
 
@@ -31,6 +28,7 @@ import com.example.louise.barselsapp.R;
  * @author Jacob Nordfalk
  * Modified: Louise Janø
  * Source :dk.nordfalk.android.elementer
+ * currently not in use
  */
 public class BenytVideoView extends Fragment implements OnClickListener {
     //TODO udtadae video view

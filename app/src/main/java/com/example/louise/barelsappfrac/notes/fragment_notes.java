@@ -22,7 +22,7 @@ import java.util.ArrayList;
 
 
 public class fragment_notes extends Fragment implements View.OnClickListener {
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+
     private Button addnote,mynotes;
     private EditText note_editor,titel_editor;
     private TextView shownotes,fragtitel;
@@ -39,19 +39,17 @@ public class fragment_notes extends Fragment implements View.OnClickListener {
     }
     @Override
     public View onCreateView(LayoutInflater i, ViewGroup container,Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+        Log.d("fragmetn_note","in use");
         fileH =  new Filehandler(getActivity().getFilesDir().toString());
         int size = PreferenceManager.getDefaultSharedPreferences(getActivity())
                 .getInt("size",0);
         View rod = i.inflate(R.layout.fragment_fragment_notes, container, false);
-        //addnote = (Button)rod.findViewById(R.id.addnotebut);
+
         note_editor = (EditText) rod.findViewById(R.id.noteediter);
         titel_editor = (EditText)rod.findViewById(R.id.titeleditor);
-       //mynotes =(Button)rod.findViewById(R.id.my_notes_but);
+
         fragtitel =(TextView)rod.findViewById(R.id.fragtitel);
 
-        //ArrayList notes = new ArrayList<String>();
-        //notes.add("First entry");
         Log.d("notes",notes.toString());
         //Tilføjer de to knapper.
         addnote.setOnClickListener(this);

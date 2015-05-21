@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.support.v4.app.DialogFragment;
@@ -20,7 +19,8 @@ import java.util.ArrayList;
 
 /**
  * Created by Louise on 24-04-2015.
- * // kilde: http://developer.android.com/reference/android/app/DialogFragment.html#AlertDialog
+ * Rediger og lav nye noter som dialog
+ *  kilde: http://developer.android.com/reference/android/app/DialogFragment.html#AlertDialog
  */
 public class New_edit_note extends DialogFragment {
 
@@ -31,7 +31,7 @@ public class New_edit_note extends DialogFragment {
     String ititel, inote;
     Filehandler fileH;
 
-   static New_edit_note newInstance(String title) {
+   static New_edit_note newInstance(String title) { //Henter argumenterne der bliver brugt.
         New_edit_note frag = new New_edit_note();
         Bundle args = new Bundle();
         args.putString("TitelFile", title);
@@ -47,7 +47,7 @@ public class New_edit_note extends DialogFragment {
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
 
-
+        Log.d("New_edit_note","in use");
         AlertDialog.Builder adb = new AlertDialog.Builder(getActivity());
         LayoutInflater i = getActivity().getLayoutInflater();
                 View v = i.inflate(R.layout.fragment_fragment_notes, null);
@@ -58,7 +58,7 @@ public class New_edit_note extends DialogFragment {
                 Log.d("dialog", "dialog shown");
                 Log.d("notes", notes.toString());
 
-                if (getArguments() != null) {
+                if (getArguments() != null) { //Sætter titel og inhold hvis det er Editnote
                     ititel = getArguments().getString("TitelFile");
                     Log.d("arg", ititel);
                     titel_editor.setText(ititel);
@@ -66,11 +66,11 @@ public class New_edit_note extends DialogFragment {
                     inote = fileH.read(ititel);
                     note_editor.setText(inote);
                     fragtitel.setText("Edit notes");
-                    adb.setTitle("Edit noter");
+
                 } else {
                     Log.d("arg", "No argumetns");
                 }
-                adb.setPositiveButton("Save",
+                adb.setPositiveButton("Save",  //Gemmer noten
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int whichButton) {
                                 Toast.makeText(getActivity(), "Save", Toast.LENGTH_SHORT).show();
@@ -78,13 +78,13 @@ public class New_edit_note extends DialogFragment {
                                 String note = note_editor.getText().toString();
                                 fileH.write(titel, note);
                                 for (Runnable r : List_notefragment.barselsNotesObservers) r.run();
-                                //observer addd
+                                //observer add. Informere observeren at listen er ændret
 
 
                             }
                         }
                 )
-                .setNegativeButton("Cancel",
+                .setNegativeButton("Cancel", //Cancel ny/ænderign af note
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int whichButton) {
                                 Toast.makeText(getActivity(), "Cancel", Toast.LENGTH_SHORT).show();
@@ -97,34 +97,6 @@ public class New_edit_note extends DialogFragment {
         adb.setView(v);
         return adb.create();
     }
-
-    /*@Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        Dialog dialog = getDialog();
-
-
-        if (dialog != null) { // Hvis fragmentet bruges som dialog, så sæt titlen
-            dialog.setCancelable(true);
-            dialog.setCanceledOnTouchOutside(true);
-            dialog.setTitle("Ny note");
-
-            // Se http://developer.android.com/reference/android/app/DialogFragment.html#AlertDialog
-            // for flere muligheder for at tilrette dialogers udseende
-        }
-
-
-        //addnote = (Button)v.findViewById(R.id.addnotebut);
-
-
-
-
-
-    /*@Override
-    public void onClick(View v) {
-        Log.d("Yay","Yay click");
-
-    }*/
 
 
 

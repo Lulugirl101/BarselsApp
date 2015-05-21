@@ -30,7 +30,7 @@
                 android:layout_weight="1"
                 android:id="@+id/efterfødsels"
                 />
-           <ImageView android:src="@drawable/barselsgang"
+           <ImageView android:src="@drawable/barselsgang1"
                android:layout_width="0dp"
                android:layout_height="130dp"
                android:scaleType="matrix"

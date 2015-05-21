@@ -15,8 +15,10 @@ import android.widget.TextView;
 
 import com.example.louise.barselsapp.R;
 
-// Video guides fragment,
-// TODO: implemnter smart with youtupe playlist instead of hardcoding
+/* Video guides fragment.
+*  Laver en liste over video. Videoer fundet på youtube, og kan findes på denne playliste : https://www.youtube.com/playlist?list=PLqRbra_4rkOBtoBvXhLUu9iCnU1OaHZ-S
+*   TODO: implemnter smart with youtupe playlist instead of hardcoding
+*/
 
 public class Video_fragment extends Fragment implements AdapterView.OnItemClickListener {
 
@@ -31,7 +33,7 @@ public class Video_fragment extends Fragment implements AdapterView.OnItemClickL
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
         View v = inflater.inflate(R.layout.video_fragment_layout, container, false);
 
         String[] videotit = {getActivity().getString(R.string.video1), getActivity().getString(R.string.video2), getActivity().getString(R.string.video3),getActivity().getString(R.string.video4), getActivity().getString(R.string.video5),getActivity().getString(R.string.video6) ,
@@ -48,7 +50,7 @@ public class Video_fragment extends Fragment implements AdapterView.OnItemClickL
                 ImageView billede = (ImageView) view.findViewById(R.id.listeelem_billede);
                 billede.setScaleType(ImageView.ScaleType.CENTER_CROP);
 
-                //TODO optimize list view
+                //TODO optimize list view insted of hardcoding
                 if (position == 0) {
                     beskrivelse.setText(beskrivelser[0]);
                     billede.setImageResource(R.drawable.video1);
@@ -103,9 +105,9 @@ public class Video_fragment extends Fragment implements AdapterView.OnItemClickL
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Intent intet =new Intent(Video_fragment.this.getActivity(),youtubeplayer.class);
+        Intent intet =new Intent(Video_fragment.this.getActivity(),Youtubeplayer1.class);
 
-        Bundle args = new Bundle();
+        //Sender vidoens ID ud som extra. Youtubeplayerview kræver at den baseres i en Youtubeplayerbase activity, og der skriftes derfor til en activity.
 
         if (position == 0){
             intet.putExtra("videoID", getActivity().getString(R.string.video1ID));
@@ -139,10 +141,10 @@ public class Video_fragment extends Fragment implements AdapterView.OnItemClickL
         }
 
 
-        startActivity(intet);
+        startActivity(intet); //Youtubeplayer activity åbnes
 
 
-        Log.d("Click", "Opening vide");
+        Log.d("Click", "Opening videoplayer");
 
     }
 }

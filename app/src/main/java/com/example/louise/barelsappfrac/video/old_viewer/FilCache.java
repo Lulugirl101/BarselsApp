@@ -19,7 +19,9 @@ import java.util.Date;
 
 /**
  * @author Jacob Nordfalk
+ * editor Louise janoe
  * Source :dk.nordfalk.android.elementer
+ * * currently not in use
  */
 public class FilCache {
 
