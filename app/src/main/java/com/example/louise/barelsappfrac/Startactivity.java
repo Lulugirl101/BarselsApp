@@ -8,6 +8,10 @@ import android.util.Log;
 import com.example.louise.barselsapp.R;
 import com.quickblox.core.QBSettings;
 
+/*
+*  @author Louise Janø og William Giesmar
+* */
+
 public class Startactivity extends FragmentActivity {
     //Start aktivitet der indeholder det pladsen til fragmenterne.
     @Override

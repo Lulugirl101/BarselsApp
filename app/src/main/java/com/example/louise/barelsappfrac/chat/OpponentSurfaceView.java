@@ -13,7 +13,10 @@ import java.util.List;
 
 /**
  * Created by igorkhomenko on 9/10/14.
- */
+ * /*
+ *  @author William Giesmar
+ * */
+
 public class OpponentSurfaceView extends SurfaceView implements SurfaceHolder.Callback {
     private DrawThread drawThread;
 

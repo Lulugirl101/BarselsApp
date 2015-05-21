@@ -21,7 +21,10 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 
 /**
  * Created by igorkhomenko on 9/11/14.
- */
+ * /*
+ *  @author William Giesmar
+ * */
+
 public class OwnSurfaceView extends SurfaceView implements SurfaceHolder.Callback {
 
     private volatile Camera camera;

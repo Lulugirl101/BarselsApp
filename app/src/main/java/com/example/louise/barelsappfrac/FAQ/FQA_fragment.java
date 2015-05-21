@@ -17,7 +17,9 @@ import com.example.louise.barselsapp.R;
 // Frequentlt asked questions. Skal indeholde en liste med mest stillede spørgsmål. Kilde taget fra Rishospitalets hjemmeside.
 // Source : http://stackoverflow.com/questions/24083886/expandablelistview-in-fragment-issue
 // Datasource: https://www.rigshospitalet.dk/afdelinger-og-klinikker/julianemarie/obstetrisk-klinik/efter-foedslen-barsel/amning/Sider/ofte-stillede-spoergsmaal--faq.aspx#hvorforamme
-
+/*
+*  @author Louise Janø
+* */
 public class FQA_fragment extends Fragment {
 
     View rootView;

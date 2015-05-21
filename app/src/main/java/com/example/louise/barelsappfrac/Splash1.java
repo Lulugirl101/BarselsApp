@@ -11,6 +11,9 @@ import android.widget.ImageView;
 
 import com.example.louise.barselsapp.R;
 
+/*
+*  @author Louise Janø
+* */
 
 public class Splash1 extends FragmentActivity implements Runnable {
     Handler handler = new Handler();

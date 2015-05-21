@@ -9,6 +9,9 @@ import android.view.ViewGroup;
 import com.example.louise.barselsapp.R;
 
 /**
+ * /*
+ *  @author William Giesmar
+ *
  * A placeholder fragment containing a simple view.
  */
 public class OpkaldsaktFragment extends Fragment {

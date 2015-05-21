@@ -16,6 +16,8 @@ import android.widget.Toast;
         import com.google.android.youtube.player.YouTubePlayerView;
 
 /*
+*  @author Louise Janø
+*
 * sources for Youtube API:
 * Tutorial :        http://javatechig.com/android/youtubeplayerview-example-in-android-using-youtube-api
 * API download :    https://developers.google.com/youtube/android/player/downloads/

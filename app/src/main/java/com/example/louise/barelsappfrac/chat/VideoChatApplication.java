@@ -1,6 +1,8 @@
 package com.example.louise.barelsappfrac.chat;
 
-
+/*
+*  @author William Giesmar
+* */
 
 import android.app.Application;
 import android.util.Log;

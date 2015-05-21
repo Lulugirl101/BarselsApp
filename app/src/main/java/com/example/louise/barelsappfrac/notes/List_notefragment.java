@@ -18,7 +18,10 @@ import com.example.louise.barselsapp.R;
 
 import java.util.ArrayList;
 
+
 /*
+*  @author Louise Janø
+*
 *  List med ens egne noter.
 * */
 

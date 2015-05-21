@@ -4,8 +4,9 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-/**
- * Created by Louise on 15-05-2015.
+/*
+ *
+ *  @author Louise Janø
  * Infopageadpater.
  */
 public class Infopageadapter1 extends FragmentPagerAdapter {

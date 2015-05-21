@@ -10,6 +10,9 @@ import android.support.v4.app.Fragment;
 
 import com.example.louise.barselsapp.R;
 
+/*
+*  @author Louise Janø
+* */
 
 public class Shownotes_frag extends Fragment {
   TextView titelshow,noteshow;

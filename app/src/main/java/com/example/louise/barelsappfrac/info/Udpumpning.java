@@ -11,6 +11,8 @@ import com.example.louise.barselsapp.R;
 
 
 /*
+*  @author Louise Janø
+*
 * Info omkring udpumpning af mælk.
 * Kilde : Mit barsels forløb, af Nordsjællands Hospital, Gynækologisk-Obstetrisk afdeling, Region Hovedstaden
 * */

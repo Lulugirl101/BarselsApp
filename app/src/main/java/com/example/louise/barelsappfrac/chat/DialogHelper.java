@@ -8,6 +8,10 @@ import android.os.Handler;
 import com.quickblox.videochat.model.definition.VideoChatConstants;
 
 
+/*
+*  @author William Giesmar
+* */
+
 public class DialogHelper {
 
     private static AlertDialog.Builder builder;

@@ -17,7 +17,7 @@ import com.example.louise.barselsapp.R;
 
 import java.util.ArrayList;
 
-/**
+/*
  * Created by Louise on 24-04-2015.
  * Rediger og lav nye noter som dialog
  *  kilde: http://developer.android.com/reference/android/app/DialogFragment.html#AlertDialog

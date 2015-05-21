@@ -12,7 +12,9 @@ import com.astuetz.PagerSlidingTabStrip;
 import com.example.louise.barselsapp.R;
 
 /*
-* Pageviwer der pliver kaldt fra infromation_frag.Sætter pageviewe og tabs.
+*  @author Louise Janø
+*
+* Pageviwer der bliver kaldt fra infromation_frag.Sætter viewpager og tabs.
 * */
 
 

@@ -14,7 +14,9 @@ import android.widget.ImageView;
 import com.example.louise.barelsappfrac.FragmentActivityman;
 import com.example.louise.barselsapp.R;
 
-/*
+ /*
+*  @author Louise Janø
+*
 * Info omkring Ambualnt fødsel.
 * Kilde : Mit barsels forløb, af Nordsjællands Hospital, Gynækologisk-Obstetrisk afdeling, Region Hovedstaden
 * */

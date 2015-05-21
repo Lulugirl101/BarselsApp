@@ -10,6 +10,8 @@ import android.view.ViewGroup;
 import com.example.louise.barselsapp.R;
 
 /*
+*  @author Louise Janø
+*
 * Info omkring Barnets ernæring.
 * Kilde : Mit barsels forløb, af Nordsjællands Hospital, Gynækologisk-Obstetrisk afdeling, Region Hovedstaden
 * */

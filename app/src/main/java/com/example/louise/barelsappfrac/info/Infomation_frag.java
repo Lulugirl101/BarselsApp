@@ -11,9 +11,11 @@ import android.widget.ImageView;
 
 import com.example.louise.barselsapp.R;
 
-// Infomation framgent, der skal indeholde det udleverede marteriale. lige pt pdf.
-// Giver oversigt over de forskellgie emner, og åbner en ny viewpager med de forskellgie emner.
-//TODO: Find måde at implementere fra backend , det udleverede Hospital marteriale.
+/*
+*  @author Louise Janø
+*  Infomation framgent, der skal indeholde det udleverede marteriale. lige pt pdf.
+* Giver oversigt over de forskellgie emner, og åbner en ny viewpager med de forskellgie emner.
+* TODO: Find måde at implementere fra backend , det udleverede Hospital marteriale.*/
 
 public class Infomation_frag extends Fragment implements View.OnClickListener {
 
@@ -76,7 +78,7 @@ public class Infomation_frag extends Fragment implements View.OnClickListener {
            args.putInt("Pos",1);
            Infopageviewer1 i = new Infopageviewer1();
            i.setArguments(args);
-           getFragmentManager().beginTransaction()
+          getActivity().getSupportFragmentManager().beginTransaction()
                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
                    .replace(R.id.fragmentindhold1,i )
                    .addToBackStack(null)

@@ -24,6 +24,10 @@ import org.jivesoftware.smack.XMPPException;
 
 import java.util.List;
 
+/*
+*  @author William Giesmar
+* */
+
 public class Chat_frag extends Fragment {
     Button a, b;
     ProgressDialog progressDialog;

@@ -1,8 +1,6 @@
 package com.example.louise.barelsappfrac.chat;
 
 import android.app.AlertDialog;
-import android.content.Context;
-import android.content.pm.ActivityInfo;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.v7.app.ActionBarActivity;
@@ -20,12 +18,16 @@ import com.quickblox.videochat.model.listeners.OnQBVideoChatListener;
 import com.quickblox.videochat.model.objects.CallState;
 import com.quickblox.videochat.model.objects.CallType;
 import com.quickblox.videochat.model.objects.VideoChatConfig;
-import com.example.louise.barelsappfrac.*;
-import com.example.louise.barelsappfrac.chat.Chat_frag;
+
 
 import org.jivesoftware.smack.XMPPException;
 
+/*
+*  @author William Giesmar
+* */
+
 public class ActivityVideoChat extends ActionBarActivity {
+
 
 
     private OwnSurfaceView egetView;

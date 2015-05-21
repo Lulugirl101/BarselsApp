@@ -10,7 +10,10 @@ import android.view.ViewGroup;
 import com.astuetz.PagerSlidingTabStrip;
 import com.example.louise.barselsapp.R;
 
-/**
+/*
+ *  @author Louise Janø
+ *
+ *
  * Kilde: https://github.com/astuetz/PagerSlidingTabStrip
  *
  * Fragment derindeholder fragmentadapteren så man kan slide imellem de forskellige fragmenter.

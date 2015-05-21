@@ -19,6 +19,8 @@ import com.example.louise.barelsappfrac.FragmentActivityman;
 import com.example.louise.barselsapp.R;
 
 /*
+*  @author Louise Janø
+*
 * Info omkring Barselgangen op Barselopholdet.
 * Kilde : Mit barsels forløb, af Nordsjællands Hospital, Gynækologisk-Obstetrisk afdeling, Region Hovedstaden
 * */

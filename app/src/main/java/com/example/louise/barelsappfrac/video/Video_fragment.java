@@ -15,7 +15,9 @@ import android.widget.TextView;
 
 import com.example.louise.barselsapp.R;
 
-/* Video guides fragment.
+/*
+*  @author Louise Janø
+*  Video guides fragment.
 *  Laver en liste over video. Videoer fundet på youtube, og kan findes på denne playliste : https://www.youtube.com/playlist?list=PLqRbra_4rkOBtoBvXhLUu9iCnU1OaHZ-S
 *   TODO: implemnter smart with youtupe playlist instead of hardcoding
 */

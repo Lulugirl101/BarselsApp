@@ -22,7 +22,9 @@ import android.widget.Toast;
 
 import com.example.louise.barselsapp.R;
 
-
+/*
+*  @author Louise Janø og William Giesmar
+* */
 
 public class mainlist_fragment extends Fragment implements AdapterView.OnItemClickListener {
 

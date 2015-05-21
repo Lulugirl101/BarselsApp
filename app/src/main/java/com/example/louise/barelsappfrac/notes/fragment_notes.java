@@ -17,8 +17,9 @@ import com.example.louise.barselsapp.R;
 
 import java.util.ArrayList;
 
-
-// Note fragment, hvor brugeren skal være istand til at tage noter, gemme og editere i dem.
+/*
+*  @author Louise Janø
+*  Note fragment, hvor brugeren skal være istand til at tage noter, gemme og editere i dem.*/
 
 
 public class fragment_notes extends Fragment implements View.OnClickListener {

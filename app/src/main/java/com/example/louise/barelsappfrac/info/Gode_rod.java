@@ -12,6 +12,8 @@ import android.widget.TextView;
 import com.example.louise.barselsapp.R;
 
 /*
+*  @author Louise Janø
+*
 * Info: Gode råd om kvindens krop.
 * Kilde : Mit barsels forløb, af Nordsjællands Hospital, Gynækologisk-Obstetrisk afdeling, Region Hovedstaden
 * */

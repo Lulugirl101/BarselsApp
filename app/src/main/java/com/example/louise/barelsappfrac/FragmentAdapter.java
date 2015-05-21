@@ -11,7 +11,9 @@ import com.example.louise.barelsappfrac.info.Infomation_frag;
 import com.example.louise.barelsappfrac.notes.List_notefragment;
 import com.example.louise.barelsappfrac.video.Video_fragment;
 
-
+/*
+*  @author Louise Janø
+* */
 public class FragmentAdapter extends FragmentPagerAdapter {
     private Fragment[] fragmenter = new Fragment[7];
 
