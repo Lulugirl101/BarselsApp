@@ -59,7 +59,7 @@ public class Video_fragment extends Fragment implements AdapterView.OnItemClickL
                     billede.setImageResource(R.drawable.video2);
                 } else if (position == 2) {
                     beskrivelse.setText(beskrivelser[2]);
-                    billede.setImageResource(R.drawable.video3);
+                    billede.setImageResource(R.drawable.video3a);
                 } else if (position == 3) {
                     beskrivelse.setText(beskrivelser[3]);
                     billede.setImageResource(R.drawable.video4);

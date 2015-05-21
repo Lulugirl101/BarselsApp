@@ -32,7 +32,7 @@ public class Infopageviewer1 extends Fragment {
                              Bundle savedInstanceState) {
         View rod = inflater.inflate(R.layout.fragment_infopageviewer, container, false);
 
-        infoAdapter = new Infopageadapter1(getChildFragmentManager());
+        infoAdapter = new Infopageadapter1(getFragmentManager());
 
 
         infoPager = (ViewPager)rod.findViewById(R.id.infopager);
