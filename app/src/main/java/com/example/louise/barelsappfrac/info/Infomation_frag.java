@@ -61,7 +61,7 @@ public class Infomation_frag extends Fragment implements View.OnClickListener {
        if (v == efterfød){
            Bundle args = new Bundle();
            args.putInt("Pos",0);
-           Infopageviewer i = new Infopageviewer();
+           Infopageviewer1 i = new Infopageviewer1();
            i.setArguments(args);
            getFragmentManager().beginTransaction()
                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
@@ -74,7 +74,7 @@ public class Infomation_frag extends Fragment implements View.OnClickListener {
         else if(v == barselgang){
            Bundle args = new Bundle();
            args.putInt("Pos",1);
-           Infopageviewer i = new Infopageviewer();
+           Infopageviewer1 i = new Infopageviewer1();
            i.setArguments(args);
            getFragmentManager().beginTransaction()
                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
@@ -87,7 +87,7 @@ public class Infomation_frag extends Fragment implements View.OnClickListener {
        else if(v == ambulant){
            Bundle args = new Bundle();
            args.putInt("Pos",2);
-           Infopageviewer i = new Infopageviewer();
+           Infopageviewer1 i = new Infopageviewer1();
            i.setArguments(args);
            getFragmentManager().beginTransaction()
                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
@@ -100,7 +100,7 @@ public class Infomation_frag extends Fragment implements View.OnClickListener {
        else if(v == kvinde_krop){
            Bundle args = new Bundle();
            args.putInt("Pos",3);
-           Infopageviewer i = new Infopageviewer();
+           Infopageviewer1 i = new Infopageviewer1();
            i.setArguments(args);
            getFragmentManager().beginTransaction()
                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
@@ -113,7 +113,7 @@ public class Infomation_frag extends Fragment implements View.OnClickListener {
        else if(v == barnetstrivsel){
            Bundle args = new Bundle();
            args.putInt("Pos",4);
-           Infopageviewer i = new Infopageviewer();
+           Infopageviewer1 i = new Infopageviewer1();
            i.setArguments(args);
            getFragmentManager().beginTransaction()
                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
@@ -126,7 +126,7 @@ public class Infomation_frag extends Fragment implements View.OnClickListener {
        else if(v == ernæring_barn){
            Bundle args = new Bundle();
            args.putInt("Pos",5);
-           Infopageviewer i = new Infopageviewer();
+           Infopageviewer1 i = new Infopageviewer1();
            i.setArguments(args);
            getFragmentManager().beginTransaction()
                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
@@ -139,7 +139,7 @@ public class Infomation_frag extends Fragment implements View.OnClickListener {
        else if(v == amning ){
            Bundle args = new Bundle();
            args.putInt("Pos",6);
-           Infopageviewer i = new Infopageviewer();
+           Infopageviewer1 i = new Infopageviewer1();
            i.setArguments(args);
            getFragmentManager().beginTransaction()
                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
@@ -152,7 +152,7 @@ public class Infomation_frag extends Fragment implements View.OnClickListener {
        else if(v ==udmalk ){
            Bundle args = new Bundle();
            args.putInt("Pos",7);
-           Infopageviewer i = new Infopageviewer();
+           Infopageviewer1 i = new Infopageviewer1();
            i.setArguments(args);
            getFragmentManager().beginTransaction()
                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)

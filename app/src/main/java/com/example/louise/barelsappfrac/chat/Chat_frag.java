@@ -126,7 +126,7 @@ public class Chat_frag extends Fragment {
         Intent intent = new Intent(Chat_frag.this.getActivity(), ActivityVideoChat.class);
         startActivity(intent);
         //nedenstående linjer er fordi vi bruger et fragment og ikke en aktivitet.
-        Chat_frag.this.getActivity().finish();
+        //Chat_frag.this.getActivity().finish();
     }
 
 }

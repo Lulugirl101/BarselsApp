@@ -29,7 +29,7 @@ public class FragmentActivityman extends Fragment {
         //Implemnts the fragment adapter og sætter de rigtige fragmenter fra efter forige aktivitet.
         View rod = i.inflate(R.layout.fragment_activityman_lay, container, false);
 
-        mAdapter = new FragmentAdapter(getFragmentManager());
+        mAdapter = new FragmentAdapter(getChildFragmentManager());
 
         mPager = (ViewPager)rod.findViewById(R.id.pager);
         mPager.setAdapter(mAdapter);

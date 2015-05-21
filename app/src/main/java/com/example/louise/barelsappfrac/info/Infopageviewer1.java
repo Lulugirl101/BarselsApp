@@ -16,9 +16,9 @@ import com.example.louise.barselsapp.R;
 * */
 
 
-public class Infopageviewer extends Fragment {
+public class Infopageviewer1 extends Fragment {
 
-    Infopageadapter infoAdapter;
+    Infopageadapter1 infoAdapter;
     ViewPager infoPager;
 
 
@@ -32,7 +32,7 @@ public class Infopageviewer extends Fragment {
                              Bundle savedInstanceState) {
         View rod = inflater.inflate(R.layout.fragment_infopageviewer, container, false);
 
-        infoAdapter = new Infopageadapter(getFragmentManager());
+        infoAdapter = new Infopageadapter1(getChildFragmentManager());
 
 
         infoPager = (ViewPager)rod.findViewById(R.id.infopager);
