@@ -130,7 +130,10 @@ public class ActivityVideoChat extends ActionBarActivity {
 
     @Override
     protected void onStop() {
-        QBVideoChatController.getInstance().finishVideoChat(videoChatConfig);
+        if (videoChatConfig!=null){
+            QBVideoChatController.getInstance().finishVideoChat(videoChatConfig);
+        }
+
         super.onStop();
     }
 
@@ -248,7 +251,7 @@ public class ActivityVideoChat extends ActionBarActivity {
     }
     @Override
     public void onDestroy() {
-        QBVideoChatController.getInstance().finishVideoChat(videoChatConfig);
+        //QBVideoChatController.getInstance().finishVideoChat(videoChatConfig);
         super.onDestroy();
 
 

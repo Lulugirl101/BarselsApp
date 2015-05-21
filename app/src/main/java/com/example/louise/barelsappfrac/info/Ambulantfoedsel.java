@@ -47,7 +47,7 @@ public class Ambulantfoedsel extends Fragment implements View.OnClickListener {
             args.putInt("Pos", 3);
             FragmentActivityman f = new FragmentActivityman();
             f.setArguments(args);
-            getFragmentManager().beginTransaction()
+            getActivity().getSupportFragmentManager().beginTransaction()
                     .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
                     .replace(R.id.fragmentindhold1, f)
                     .addToBackStack(null)

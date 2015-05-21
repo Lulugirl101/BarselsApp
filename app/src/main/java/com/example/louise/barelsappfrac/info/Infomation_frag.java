@@ -63,7 +63,7 @@ public class Infomation_frag extends Fragment implements View.OnClickListener {
            args.putInt("Pos",0);
            Infopageviewer1 i = new Infopageviewer1();
            i.setArguments(args);
-           getFragmentManager().beginTransaction()
+           getActivity().getSupportFragmentManager().beginTransaction()
                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
                    .replace(R.id.fragmentindhold1,i )
                    .addToBackStack(null)
@@ -89,7 +89,7 @@ public class Infomation_frag extends Fragment implements View.OnClickListener {
            args.putInt("Pos",2);
            Infopageviewer1 i = new Infopageviewer1();
            i.setArguments(args);
-           getFragmentManager().beginTransaction()
+           getActivity().getSupportFragmentManager().beginTransaction()
                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
                    .replace(R.id.fragmentindhold1,i )
                    .addToBackStack(null)
@@ -102,7 +102,7 @@ public class Infomation_frag extends Fragment implements View.OnClickListener {
            args.putInt("Pos",3);
            Infopageviewer1 i = new Infopageviewer1();
            i.setArguments(args);
-           getFragmentManager().beginTransaction()
+           getActivity().getSupportFragmentManager().beginTransaction()
                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
                    .replace(R.id.fragmentindhold1,i )
                    .addToBackStack(null)
@@ -115,7 +115,7 @@ public class Infomation_frag extends Fragment implements View.OnClickListener {
            args.putInt("Pos",4);
            Infopageviewer1 i = new Infopageviewer1();
            i.setArguments(args);
-           getFragmentManager().beginTransaction()
+           getActivity().getSupportFragmentManager().beginTransaction()
                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
                    .replace(R.id.fragmentindhold1,i )
                    .addToBackStack(null)
@@ -128,7 +128,7 @@ public class Infomation_frag extends Fragment implements View.OnClickListener {
            args.putInt("Pos",5);
            Infopageviewer1 i = new Infopageviewer1();
            i.setArguments(args);
-           getFragmentManager().beginTransaction()
+           getActivity().getSupportFragmentManager().beginTransaction()
                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
                    .replace(R.id.fragmentindhold1,i )
                    .addToBackStack(null)
@@ -141,7 +141,7 @@ public class Infomation_frag extends Fragment implements View.OnClickListener {
            args.putInt("Pos",6);
            Infopageviewer1 i = new Infopageviewer1();
            i.setArguments(args);
-           getFragmentManager().beginTransaction()
+           getActivity().getSupportFragmentManager().beginTransaction()
                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
                    .replace(R.id.fragmentindhold1,i )
                    .addToBackStack(null)
@@ -154,7 +154,7 @@ public class Infomation_frag extends Fragment implements View.OnClickListener {
            args.putInt("Pos",7);
            Infopageviewer1 i = new Infopageviewer1();
            i.setArguments(args);
-           getFragmentManager().beginTransaction()
+           getActivity().getSupportFragmentManager().beginTransaction()
                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
                    .replace(R.id.fragmentindhold1,i )
                    .addToBackStack(null)
