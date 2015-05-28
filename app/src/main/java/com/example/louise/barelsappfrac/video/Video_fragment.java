@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -22,9 +23,10 @@ import com.example.louise.barselsapp.R;
 *   TODO: implemnter smart with youtupe playlist instead of hardcoding
 */
 
-public class Video_fragment extends Fragment implements AdapterView.OnItemClickListener {
+public class Video_fragment extends Fragment implements AdapterView.OnItemClickListener,View.OnClickListener {
 
     ListView videolist;
+    ImageButton playlist;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -98,6 +100,8 @@ public class Video_fragment extends Fragment implements AdapterView.OnItemClickL
         videolist = (ListView)v.findViewById(R.id.videolist);
         videolist.setOnItemClickListener(this);
         videolist.setAdapter(adapter);
+        playlist = (ImageButton)v.findViewById(R.id.playlist);
+        playlist.setOnClickListener(this);
 
         return v;
 
@@ -142,11 +146,19 @@ public class Video_fragment extends Fragment implements AdapterView.OnItemClickL
             intet.putExtra("videoID", getActivity().getString(R.string.video10ID));
         }
 
-
+        intet.putExtra("playlist",false);
         startActivity(intet); //Youtubeplayer activity åbnes
 
 
         Log.d("Click", "Opening videoplayer");
 
+    }
+
+    @Override
+    public void onClick(View v) {
+        Intent intet =new Intent(Video_fragment.this.getActivity(),Youtubeplayer1.class);
+        intet.putExtra("videoID", getActivity().getString(R.string.video1ID));
+        intet.putExtra("playlist",true);
+        startActivity(intet); //Youtubeplayer activity åbnes
     }
 }

@@ -34,6 +34,7 @@ public class Youtubeplayer1 extends YouTubeBaseActivity implements YouTubePlayer
 
     //http://youtu.be/<VIDEO_ID>
     String videoID ;
+    Boolean playlist;
 
 
     @Override
@@ -48,6 +49,8 @@ public class Youtubeplayer1 extends YouTubeBaseActivity implements YouTubePlayer
         if (extras != null) {
            videoID = extras.getString("videoID");
             // and get whatever type user account id is
+            //shall we show the playlist
+            playlist = extras.getBoolean("playlist");
         }
 
         /** Initializing YouTube player view **/
@@ -72,7 +75,13 @@ public class Youtubeplayer1 extends YouTubeBaseActivity implements YouTubePlayer
         player.play();
         /** Start buffering **/
         if (!wasRestored) {
-            player.cueVideo(videoID);
+            if (playlist == true){
+                player.cuePlaylist("PLqRbra_4rkOBtoBvXhLUu9iCnU1OaHZ-S"); //Barselsapp playlist
+            }
+            else {
+                player.cueVideo(videoID); //Specific vidoes
+            }
+
         }
     }
 
