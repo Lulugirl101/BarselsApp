@@ -1,6 +1,8 @@
 package com.example.louise.barelsappfrac.chat;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.ImageFormat;
@@ -10,9 +12,13 @@ import android.graphics.Rect;
 import android.graphics.YuvImage;
 import android.hardware.Camera;
 import android.util.AttributeSet;
+import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.Display;
+import android.view.Surface;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
+import android.view.WindowManager;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -23,6 +29,8 @@ import java.util.concurrent.ConcurrentLinkedQueue;
  * Created by igorkhomenko on 9/11/14.
  * /*
  *  @author William Giesmar
+ *  Camera modification : Louise Janoe
+ *  Source : http://stackoverflow.com/questions/13495489/android-screen-orientation-rotation-for-camera-preview
  * */
 
 public class OwnSurfaceView extends SurfaceView implements SurfaceHolder.Callback {
@@ -33,6 +41,8 @@ public class OwnSurfaceView extends SurfaceView implements SurfaceHolder.Callbac
     private ConcurrentLinkedQueue<Runnable> cameraPreviewCallbackQueue;
     private int currentCameraId;
 
+    Context mContext;
+
     private final int IMAGE_QUALITY = 25;
     private int FPS = 4; // by default 4 fps
     private Camera.Size frameSize;
@@ -41,6 +51,7 @@ public class OwnSurfaceView extends SurfaceView implements SurfaceHolder.Callbac
     private Matrix rotationMatrixBack;
 
     private CameraDataListener cameraDataListener;
+
 
     private boolean isCreated = false;
 
@@ -63,6 +74,7 @@ public class OwnSurfaceView extends SurfaceView implements SurfaceHolder.Callbac
         rotationMatrixBack.postRotate(90);
 
         cameraPreviewCallbackQueue = new ConcurrentLinkedQueue<Runnable>();
+
     }
 
     public void setCameraDataListener(CameraDataListener cameraDataListener) {
@@ -125,7 +137,15 @@ public class OwnSurfaceView extends SurfaceView implements SurfaceHolder.Callbac
     };
 
 
+    public static boolean isTablet(Context context) {
+
+        return (context.getResources().getConfiguration().screenLayout
+                & Configuration.SCREENLAYOUT_SIZE_MASK)
+                >= Configuration.SCREENLAYOUT_SIZE_LARGE;
+    }
+
     public void openCamera() {
+
         if(!isCreated || camera != null){
             return;
         }
@@ -139,8 +159,60 @@ public class OwnSurfaceView extends SurfaceView implements SurfaceHolder.Callbac
         }
 
         try {
+            Camera.Parameters parameters = camera.getParameters();
+            Display display = ((Activity) getContext()).getWindowManager().getDefaultDisplay();
+
+            int rotation = getResources().getConfiguration().orientation;
             camera.setPreviewDisplay(getHolder());
-            camera.setDisplayOrientation(90);
+            Log.i("CameraPreviews", "rotation is " + display.getRotation());
+
+            if (isTablet(getContext())== true){
+
+                Log.d("Tablet","true");
+
+                if (display.getRotation() == Surface.ROTATION_0) {
+                    camera.setDisplayOrientation(0);
+                }
+
+                if (display.getRotation() == Surface.ROTATION_90) {
+                    camera.setDisplayOrientation(270);
+                }
+
+                if (display.getRotation() == Surface.ROTATION_180) {
+                    camera.setDisplayOrientation(180);
+                }
+
+                if (display.getRotation() == Surface.ROTATION_270) {
+                    camera.setDisplayOrientation(90);
+                }
+            }
+            else {
+
+                if (display.getRotation() == Surface.ROTATION_0) {
+                    Log.d("pos","1");
+                    camera.setDisplayOrientation(90);
+                }
+
+                if (display.getRotation() == Surface.ROTATION_90) {
+                    Log.d("pos","2");
+                    camera.setDisplayOrientation(0);
+                }
+
+                if (display.getRotation() == Surface.ROTATION_180) {
+                    Log.d("pos","3");
+                    camera.setDisplayOrientation(270);
+                }
+
+                if (display.getRotation() == Surface.ROTATION_270) {
+                    Log.d("pos","4");
+                    camera.setDisplayOrientation(180);
+                }
+            }
+
+
+
+
+
             camera.setPreviewCallback(cameraPreviewCallback);
         } catch (IOException ignore) {
             ignore.printStackTrace();

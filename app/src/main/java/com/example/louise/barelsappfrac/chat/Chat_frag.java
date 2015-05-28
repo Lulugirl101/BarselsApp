@@ -45,6 +45,7 @@ public class Chat_frag extends Fragment {
 
         progressDialog = new ProgressDialog(getActivity());
         View web = inflater.inflate(R.layout.char_frag_layout, container, false);
+
         a = (Button) web.findViewById(R.id.willknappen);
         a.setOnClickListener(new View.OnClickListener() {
             @Override
