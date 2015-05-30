@@ -39,6 +39,7 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="400dp"
+                        android:id="@+id/imwil"
                         android:layout_gravity="center"
                         android:src="@drawable/fortowiliam"/>
                     <Button
@@ -57,6 +58,7 @@
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_weight="1"
+                    android:id="@+id/imlulu"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
                     <ImageView

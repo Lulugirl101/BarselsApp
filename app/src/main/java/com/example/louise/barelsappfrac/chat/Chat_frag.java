@@ -2,6 +2,7 @@ package com.example.louise.barelsappfrac.chat;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.media.Image;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 
@@ -26,11 +28,13 @@ import java.util.List;
 
 /*
 *  @author William Giesmar
+*  modifier : Louise Janoe
 * */
 
-public class Chat_frag extends Fragment {
+public class Chat_frag extends Fragment implements View.OnClickListener {
     Button a, b;
     ProgressDialog progressDialog;
+    ImageView l,w;
 
 
     @Override
@@ -63,6 +67,10 @@ public class Chat_frag extends Fragment {
             }
         });
         // Inflate the layout for this fragment
+        l = (ImageView)web.findViewById(R.id.imlulu);
+        l.setOnClickListener(this);
+        w = (ImageView)web.findViewById(R.id.imwil);
+        w.setOnClickListener(this);
         return web;
     }
 
@@ -134,4 +142,13 @@ public class Chat_frag extends Fragment {
         //Chat_frag.this.getActivity().finish();
     }
 
+    @Override
+    public void onClick(View v) {
+        if (v == l){
+            createSession(VideoChatApplication.louise, VideoChatApplication.pass2);
+        }
+        else if (v == w){
+            createSession(VideoChatApplication.william, VideoChatApplication.pass1);
+        }
+    }
 }
