@@ -253,7 +253,9 @@ public class ActivityVideoChat extends ActionBarActivity {
     }
     @Override
     public void onDestroy() {
-        //QBVideoChatController.getInstance().finishVideoChat(videoChatConfig);
+        if (videoChatConfig!=null){
+            QBVideoChatController.getInstance().finishVideoChat(videoChatConfig);
+        }
         super.onDestroy();
 
 

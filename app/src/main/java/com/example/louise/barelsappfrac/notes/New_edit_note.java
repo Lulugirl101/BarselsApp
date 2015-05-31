@@ -76,7 +76,7 @@ public class New_edit_note extends DialogFragment {
                                 Toast.makeText(getActivity(), "Save", Toast.LENGTH_SHORT).show();
                                 String titel = titel_editor.getText().toString();
                                 String note = note_editor.getText().toString();
-                                fileH.write(titel, note);
+                                fileH.write(titel, note);//Skriver til filen vha filehandler, med de 2 strings
                                 for (Runnable r : List_notefragment.barselsNotesObservers) r.run();
                                 //observer add. Informere observeren at listen er ændret
 

@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -21,6 +22,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.louise.barselsapp.R;
+
+import com.example.louise.barelsappfrac.Loginfunkt.Loginakt;
 
 /*
 *  @author Louise Janø og William Giesmar
@@ -40,14 +43,13 @@ public class mainlist_fragment extends Fragment implements AdapterView.OnItemCli
         // Inflate the layout for this fragment
         //Sætter listview op
         Log.d("","Inside list fragmetent");
-        String[] muligheder = {"FAQ", "Video Guides", "Mit forløb: Barsel", "Chat", "Noter"};
+        String[] muligheder = {"FAQ", "Video Guides", "Mit forløb: Barsel", "Chat", "Noter","Login"};
          final String[] beskrivelser = {"Spørgsmål og svar", "Video guides og information videor", "Nytig information delt ved emner fra mit forløb mappen", "Snak med en af vores læger", "Lav dine egne noter"};
         ArrayAdapter adapter = new ArrayAdapter(getActivity(), R.layout.listeelement, R.id.listeelem_overskrift, muligheder) {
             //udvider listview
             @Override
             public View getView(int position, View cachedView, ViewGroup parent) {
                 View view = super.getView(position, cachedView, parent);
-                Log.d("Layout", "List layout is beagin set up");
                 TextView beskrivelse = (TextView) view.findViewById(R.id.listeelem_beskrivelse);
                 ImageView billede = (ImageView) view.findViewById(R.id.listeelem_billede);
                 if (position == 0) {
@@ -64,10 +66,13 @@ public class mainlist_fragment extends Fragment implements AdapterView.OnItemCli
                     billede.setImageResource(R.drawable.chat);
                 } else if (position == 4) {
                     beskrivelse.setText(beskrivelser[4]);
+                } else if (position == 5) {
+                        beskrivelse.setText("Login til app");
+                        billede.setImageResource(R.drawable.key);
                 } else {
                     Log.d("", "NO discription");
                 }
-                Log.d("Layout", "The list wiev have been set up");
+
 
                 return view;
 
@@ -79,6 +84,7 @@ public class mainlist_fragment extends Fragment implements AdapterView.OnItemCli
         ListView listView = new ListView(getActivity());
         listView.setOnItemClickListener(this);
         listView.setAdapter(adapter);
+        Log.d("Layout", "The list wiev have been set up");
 
         return listView;
     }
@@ -194,6 +200,10 @@ public class mainlist_fragment extends Fragment implements AdapterView.OnItemCli
                     .addToBackStack(null)
                     .commit();
             Log.d("Click","Opening Notes");
+        } else if (position == 5) { //login AlertDialog)
+            Intent i = new Intent(mainlist_fragment.this.getActivity(),Loginakt.class);
+            startActivity(i);
+            System.out.println("Åbner loginaktivitet");
         }
 
         else {

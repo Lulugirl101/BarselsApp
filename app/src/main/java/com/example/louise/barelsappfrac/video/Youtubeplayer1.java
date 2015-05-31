@@ -30,7 +30,7 @@ import android.widget.Toast;
 
 public class Youtubeplayer1 extends YouTubeBaseActivity implements YouTubePlayer.OnInitializedListener {
 
-    public static final String API_KEY = "AIzaSyCFUsYwse3E8XkLOeP5uikR_Ah1Y2uOngg"; //Ket optaind ind devolpers guide
+    public static final String API_KEY = "AIzaSyCFUsYwse3E8XkLOeP5uikR_Ah1Y2uOngg"; //Key optaind in devolpers guide
 
     //http://youtu.be/<VIDEO_ID>
     String videoID ;

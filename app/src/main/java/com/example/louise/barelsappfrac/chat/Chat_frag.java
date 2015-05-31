@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -71,11 +72,23 @@ public class Chat_frag extends Fragment implements View.OnClickListener {
         l.setOnClickListener(this);
         w = (ImageView)web.findViewById(R.id.imwil);
         w.setOnClickListener(this);
+
+
+        TextView aktuelbruger = (TextView) web.findViewById(R.id.aktuelbruger);
+        aktuelbruger.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(Chat_frag.this.getActivity(), "Ikke implementeret endnu", Toast.LENGTH_SHORT).show();
+                // Intent intent = new Intent(Chat_frag.this.getActivity(), ActivityVideoChat.class);
+                //startActivity(intent);
+
+            }
+        });
         return web;
     }
 
     private void createSession(String login, final String password) {
-            progressDialog.setMessage("Vent venligst\n Fobindelsen oprettes");
+            progressDialog.setMessage("Vent venligst\n Forbindelsen oprettes");
             progressDialog.show();
             QBAuth.createSession(login, password, new QBEntityCallbackImpl<QBSession>() {
                 @Override

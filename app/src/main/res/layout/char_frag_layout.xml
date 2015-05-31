@@ -78,7 +78,18 @@
             </LinearLayout>
 
 
-
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffd7bdec"
+            android:text="Log ind som nuværende bruger"
+            android:id="@+id/aktuelbruger"
+            android:layout_margin="20dp"
+            android:textColor="#ff2b1655"
+            android:layout_marginBottom="10dp"
+            android:layout_gravity="center_horizontal|bottom"
+            android:textColorHighlight="#ffffffff"
+            android:textSize="24dp" />
 
     </LinearLayout>
 

@@ -46,6 +46,10 @@
             android:name="com.example.louise.barelsappfrac.video.Youtubeplayer1"
             android:label="@string/title_activity_youtubeplayer" >
         </activity>
+        <activity
+            android:name="com.example.louise.barelsappfrac.Loginfunkt.Loginakt"
+            android:label="@string/title_activity_loginakt" >
+        </activity>
     </application>
 
 </manifest>

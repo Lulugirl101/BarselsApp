@@ -113,6 +113,7 @@ public class List_notefragment extends Fragment implements AdapterView.OnItemCli
         final String listtext = ((TextView)view.findViewById(android.R.id.text1)).getText().toString();
         Log.d("Item",listtext);
         AlertDialog.Builder dialog = new AlertDialog.Builder(getActivity());
+        dialog.setCancelable(true);
         dialog.setTitle(listtext);
         dialog.setPositiveButton("Edit", new AlertDialog.OnClickListener() {
 

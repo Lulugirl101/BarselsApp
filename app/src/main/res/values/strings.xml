@@ -9,6 +9,7 @@
     <string name="title_activity_videoguides">Videoguides</string>
     <string name="title_activity_information">Information</string>
     <string name="title_activity_chat">Chat</string>
+    <string name="title_activity_loginakt">Loginakt</string>
 
 
     <string-array name="fagtitels">
