@@ -31,13 +31,13 @@ public class Video_fragment extends Fragment implements AdapterView.OnItemClickL
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        Log.d("Video","Oncreate");
     }
 
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
+        Log.d("video","onCreateView");
         View v = inflater.inflate(R.layout.video_fragment_layout, container, false);
 
         String[] videotit = {getActivity().getString(R.string.video1), getActivity().getString(R.string.video2), getActivity().getString(R.string.video3),getActivity().getString(R.string.video4), getActivity().getString(R.string.video5),getActivity().getString(R.string.video6) ,
@@ -161,4 +161,20 @@ public class Video_fragment extends Fragment implements AdapterView.OnItemClickL
         intet.putExtra("playlist",true);
         startActivity(intet); //Youtubeplayer activity åbnes
     }
+
+    public void onStart()
+    { Log.d("video","onStart()");
+        super.onStart(); }
+    public void onAttach(){
+        super.onAttach(getActivity());
+    }
+    public void onResume()
+    { Log.d("video","onResume()");
+        super.onResume(); }
+    public void onPause()
+    { Log.d("video","onPause()"); super.onPause(); }
+    public void onStop()
+    { Log.d("video","onStop()"); super.onStop(); }
+    public void onDestroy()
+    { Log.d("video","onDestroy()"); super.onDestroy(); }
 }

@@ -36,12 +36,14 @@ public class List_notefragment extends Fragment implements AdapterView.OnItemCli
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.d("Info","Oncreate");
 
     }
 
     @Override
      public View onCreateView(LayoutInflater inflater, ViewGroup container,
                 Bundle savedInstanceState) {
+        Log.d("Info","Oncreateview");
         Log.d("List_notefragment","in use");
         View v = inflater.inflate(R.layout.listnotes_frag, container, false);
             listViewNotes = (ListView) v.findViewById(R.id.listViewnotes);
@@ -157,7 +159,22 @@ public class List_notefragment extends Fragment implements AdapterView.OnItemCli
     public void onResume() { //Datasæt ændret
         super.onResume();
         Log.d("Notes","Notelist resume");
+        Log.d("Notes","onResume()");
         ((ArrayAdapter) listViewNotes.getAdapter()).notifyDataSetChanged();
     }
+
+    public void onStart()
+    { Log.d("Notes","onStart()");
+        super.onStart(); }
+    public void onAttach(){
+        super.onAttach(getActivity());
+    }
+
+    public void onPause()
+    { Log.d("Notes","onPause()"); super.onPause(); }
+    public void onStop()
+    { Log.d("Notes","onStop()"); super.onStop(); }
+    public void onDestroy()
+    { Log.d("Notes","onDestroy()"); super.onDestroy(); }
 
 }

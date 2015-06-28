@@ -4,6 +4,7 @@ package com.example.louise.barelsappfrac.FAQ;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,6 +33,7 @@ public class FQA_fragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
+        Log.d("FAQ","onCreate");
         Resources res = getResources();
         groups = res.getStringArray(R.array.fagtitels);
 
@@ -105,6 +107,7 @@ public class FQA_fragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+            Log.d("FAQ","onCreateView");
            return inflater.inflate(R.layout.fragment_fqa_fragment, container, false);
     }
 
@@ -213,6 +216,22 @@ public class FQA_fragment extends Fragment {
 
 
     }
+
+    public void onStart()
+    { Log.d("FAQ", "onStart()");
+        super.onStart(); }
+    public void onAttach(){
+        super.onAttach(getActivity());
+    }
+    public void onResume()
+    { Log.d("FAQ","onResume()");
+        super.onResume(); }
+    public void onPause()
+    { Log.d("FAQ","onPause()"); super.onPause(); }
+    public void onStop()
+    { Log.d("FAQ","onStop()"); super.onStop(); }
+    public void onDestroy()
+    { Log.d("FAQ","onDestroy()"); super.onDestroy(); }
 
 
 }

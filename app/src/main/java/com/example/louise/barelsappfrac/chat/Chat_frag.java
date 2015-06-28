@@ -42,12 +42,13 @@ public class Chat_frag extends Fragment implements View.OnClickListener {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initChatService();
+        Log.d("Chat","onCreate() "+savedInstanceState);
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
+        Log.d("Chat","OnCreateview");
         progressDialog = new ProgressDialog(getActivity());
         View web = inflater.inflate(R.layout.char_frag_layout, container, false);
 
@@ -164,4 +165,21 @@ public class Chat_frag extends Fragment implements View.OnClickListener {
             createSession(VideoChatApplication.william, VideoChatApplication.pass1);
         }
     }
+
+
+    public void onStart()
+    { Log.d("Chat","onStart()");
+        super.onStart(); }
+    public void onAttach(){
+        super.onAttach(getActivity());
+    }
+    public void onResume()
+    { Log.d("Chat","onResume()");
+        super.onResume(); }
+    public void onPause()
+    { Log.d("Chat","onPause()"); super.onPause(); }
+    public void onStop()
+    { Log.d("Chat","onStop()"); super.onStop(); }
+     public void onDestroy()
+    { Log.d("Chat","onDestroy()"); super.onDestroy(); }
 }

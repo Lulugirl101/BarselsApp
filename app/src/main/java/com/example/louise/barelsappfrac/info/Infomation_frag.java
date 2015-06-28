@@ -25,6 +25,7 @@ public class Infomation_frag extends Fragment implements View.OnClickListener {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.d("Info","OnCreate");
 
     }
 
@@ -32,6 +33,7 @@ public class Infomation_frag extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        Log.d("Info","OnCreateView");
         View table = inflater.inflate(R.layout.info_frag_layout, container, false);
         efterfød = (ImageView)table.findViewById(R.id.efterfødsels);
         barselgang=(ImageView)table.findViewById(R.id.barselgang);
@@ -166,4 +168,20 @@ public class Infomation_frag extends Fragment implements View.OnClickListener {
        }
 
     }
+
+    public void onStart()
+    { Log.d("Info","onStart()");
+        super.onStart(); }
+    public void onAttach(){
+        super.onAttach(getActivity());
+    }
+    public void onResume()
+    { Log.d("Info","onResume()");
+        super.onResume(); }
+    public void onPause()
+    { Log.d("Info","onPause()"); super.onPause(); }
+    public void onStop()
+    { Log.d("Info","onStop()"); super.onStop(); }
+    public void onDestroy()
+    { Log.d("Info","onDestroy()"); super.onDestroy(); }
 }
